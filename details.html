@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Details - AsMultiverse</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="data.js" as="script">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" class="logo-link" aria-label="Go to homepage"
+                style="text-decoration: none; display: flex; align-items: center; gap: 10px; color: var(--text);">
+                <i class="fas fa-meteor" style="color: #7b4dff;"></i>
+                <h1 style="font-size: 1.8rem; margin: 0;">AS <span
+                        style="color: transparent; background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; background-clip: text;">MULTIVERSE</span>
+                </h1>
+            </a>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle navigation menu"
+            style="display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="index.html#appGrid"><i class="fas fa-mobile-alt"></i> Apps</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="contact.html"><i class="fas fa-comment"></i> Contact</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- Main Content -->
+    <main class="detail-main">
+        <div class="container detail-container" id="detailContent">
+            <div class="loading" aria-live="polite">Loading app details...</div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-meteor"></i>
+                    <h3>AS MULTIVERSE</h3>
+                </div>
+                <p class="footer-description">
+                    Your trusted source for educational applications and premium mod APKs. Download safely and freely.
+                </p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Follow us on Telegram"><i class="fab fa-telegram"></i></a>
+                    <a href="#" aria-label="Follow us on GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-star"></i> Featured Apps</a></li>
+                    <li><a href="#"><i class="fas fa-graduation-cap"></i> Educational</a></li>
+                    <li><a href="#"><i class="fas fa-gamepad"></i> Entertainment</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                    <li><a href="#"><i class="fas fa-file-contract"></i> Terms of Service</a></li>
+                    <li><a href="#"><i class="fas fa-cookie-bite"></i> Cookie Policy</a></li>
+                    <li><a href="#"><i class="fas fa-exclamation-circle"></i> Disclaimer</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact & Support</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                    <li><a href="#"><i class="fas fa-bug"></i> Report Issue</a></li>
+                    <li><a href="#"><i class="fas fa-lightbulb"></i> Suggest App</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> AsMultiverse. All rights reserved.</p>
+            <p class="footer-note">
+                All trademarks, logos, and brand names are property of their respective owners.
+                Apps are for educational purposes only.
+            </p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const appId = params.get('id');
+            const container = document.getElementById('detailContent');
+
+            if (!appId) {
+                container.innerHTML = `
+                    <div class="error-state">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h2>App not found</h2>
+                        <p>The requested app could not be located.</p>
+                        <a href="index.html" class="btn btn-primary">Browse All Apps</a>
+                    </div>`;
+                return;
+            }
+
+            // Using global data from data.js
+            const apps = window.appsData || [];
+            const app = apps.find(a => a.id === appId);
+
+            if (app) {
+                // SEO Setup
+                document.title = app.seoTitle ? app.seoTitle : `${app.name} - Download Mod APK | AsMultiverse`;
+
+                // Update meta description
+                let metaDesc = document.querySelector('meta[name="description"]');
+                if (!metaDesc) {
+                    metaDesc = document.createElement('meta');
+                    metaDesc.name = "description";
+                    document.head.appendChild(metaDesc);
+                }
+                metaDesc.content = app.seoDesc || `Download ${app.name} ${app.version} Mod APK. Premium features unlocked, safe download on AsMultiverse.`;
+
+                // Update meta keywords
+                let metaKeys = document.querySelector('meta[name="keywords"]');
+                if (!metaKeys) {
+                    metaKeys = document.createElement('meta');
+                    metaKeys.name = "keywords";
+                    document.head.appendChild(metaKeys);
+                }
+                metaKeys.content = app.seoKeywords || `${app.name}, mod apk, premium unlocked, android app, download, ${app.category}`;
+
+                // Render app details
+                container.innerHTML = `
+                    <div class="detail-card">
+                        <div class="detail-header">
+                            <div class="app-icon-container">
+                                <img src="${app.iconUrl}" alt="${app.name} Icon" class="detail-icon" 
+                                     onerror="this.src='https://via.placeholder.com/120/7b4dff/ffffff?text=${encodeURIComponent(app.name.substring(0, 1))}'">
+                                <div class="app-badge">MOD</div>
+                            </div>
+                            <div class="app-title-section">
+                                <h1 class="detail-title">${app.name}</h1>
+                                <p class="app-developer">${app.developer}</p>
+                                <div class="app-rating">
+                                    ${Array.from({ length: 5 }, (_, i) =>
+                    `<i class="fas fa-star${i < 4 ? '' : '-half-alt'}"></i>`
+                ).join('')}
+                                    <span class="rating-text">4.8 (1.2k)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="app-meta-grid">
+                            <div class="meta-item">
+                                <i class="fas fa-code-branch"></i>
+                                <span class="meta-label">Version</span>
+                                <span class="meta-value">${app.version}</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-download"></i>
+                                <span class="meta-label">Downloads</span>
+                                <span class="meta-value">${app.downloads}</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-hdd"></i>
+                                <span class="meta-label">Size</span>
+                                <span class="meta-value">${app.size}</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span class="meta-label">Updated</span>
+                                <span class="meta-value">${app.lastUpdated || 'Recently'}</span>
+                            </div>
+                        </div>
+
+                        <div class="download-section">
+                            <a href="${app.downloadUrl}" class="btn btn-download-main" 
+                               aria-label="Download ${app.name}">
+                                <i class="fas fa-cloud-download-alt"></i> 
+                                <span>Download Now</span>
+                                <small>${app.size} • Premium Unlocked</small>
+                            </a>
+                            <div class="download-info">
+                                <p><i class="fas fa-check-circle"></i> Safe & Verified</p>
+                                <p><i class="fas fa-bolt"></i> No Ads</p>
+                                <p><i class="fas fa-lock-open"></i> Premium Features</p>
+                            </div>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3><i class="fas fa-info-circle"></i> About this App</h3>
+                            <div class="description-content">${app.description}</div>
+                            
+                            ${app.features ? `
+                            <div class="features-section">
+                                <h4><i class="fas fa-star"></i> MOD Features</h4>
+                                <ul class="features-list">
+                                    ${app.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                                </ul>
+                            </div>` : ''}
+                        </div>
+
+                        <div class="app-tags">
+                            ${app.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                    
+                    ${apps.filter(a => a.id !== app.id).length > 0 ? `
+                    <div class="related-apps-section">
+                        <h3><i class="fas fa-thumbs-up"></i> You Might Also Like</h3>
+                        <div class="related-apps-grid" id="relatedApps">
+                            <!-- Related apps will be populated here -->
+                        </div>
+                    </div>` : ''}
+                `;
+
+                // Add JSON-LD Schema for SEO
+                const schema = {
+                    "@context": "https://schema.org",
+                    "@type": "SoftwareApplication",
+                    "name": app.name,
+                    "applicationCategory": "EducationalApplication",
+                    "operatingSystem": "Android",
+                    "description": app.description,
+                    "image": app.iconUrl,
+                    "author": {
+                        "@type": "Organization",
+                        "name": app.developer
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "0",
+                        "priceCurrency": "USD"
+                    },
+                    "aggregateRating": {
+                        "@type": "AggregateRating",
+                        "ratingValue": "4.8",
+                        "ratingCount": "1200"
+                    }
+                };
+
+                const script = document.createElement('script');
+                script.type = "application/ld+json";
+                script.text = JSON.stringify(schema);
+                document.head.appendChild(script);
+
+                // Add Open Graph meta tags
+                const ogTags = [
+                    { property: "og:title", content: app.seoTitle || app.name },
+                    { property: "og:description", content: app.seoDesc || app.description.substring(0, 160) },
+                    { property: "og:image", content: app.iconUrl },
+                    { property: "og:url", content: window.location.href },
+                    { property: "og:type", content: "website" },
+                    { property: "og:site_name", content: "AsMultiverse" },
+                    { property: "twitter:card", content: "summary_large_image" },
+                    { property: "twitter:title", content: app.seoTitle || app.name },
+                    { property: "twitter:description", content: app.seoDesc || app.description.substring(0, 160) },
+                    { property: "twitter:image", content: app.iconUrl }
+                ];
+
+                ogTags.forEach(tag => {
+                    let meta = document.querySelector(`meta[property="${tag.property}"]`) ||
+                        document.querySelector(`meta[name="${tag.property}"]`);
+                    if (!meta) {
+                        meta = document.createElement('meta');
+                        if (tag.property.startsWith('og:')) {
+                            meta.setAttribute('property', tag.property);
+                        } else {
+                            meta.setAttribute('name', tag.property);
+                        }
+                        document.head.appendChild(meta);
+                    }
+                    meta.content = tag.content;
+                });
+
+                // Render Related Apps
+                setTimeout(() => {
+                    const relatedContainer = document.getElementById('relatedApps');
+                    if (relatedContainer) {
+                        // Find related apps by tags or category
+                        const related = apps
+                            .filter(a => a.id !== app.id)
+                            .sort((a, b) => {
+                                // Priority: same category > shared tags > random
+                                const categoryMatch = a.category === app.category ? -1 : 1;
+                                const tagMatches = a.tags.filter(t => app.tags.includes(t)).length;
+                                return categoryMatch || b.tags.length - tagMatches;
+                            })
+                            .slice(0, 4);
+
+                        related.forEach(r => {
+                            const rCard = document.createElement('a');
+                            rCard.href = `details.html?id=${r.id}`;
+                            rCard.className = 'related-card';
+                            rCard.innerHTML = `
+                                <div class="related-card-inner">
+                                    <img src="${r.iconUrl}" alt="${r.name}" 
+                                         onerror="this.src='https://via.placeholder.com/60/7b4dff/ffffff?text=${encodeURIComponent(r.name.substring(0, 1))}'">
+                                    <div class="related-card-info">
+                                        <h4>${r.name}</h4>
+                                        <p class="related-card-category">${r.category}</p>
+                                        <div class="related-card-meta">
+                                            <span><i class="fas fa-download"></i> ${r.downloads}</span>
+                                            <span><i class="fas fa-hdd"></i> ${r.size}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                            relatedContainer.appendChild(rCard);
+                        });
+                    }
+                }, 100);
+
+            } else {
+                container.innerHTML = `
+                    <div class="error-state">
+                        <i class="fas fa-search"></i>
+                        <h2>App Not Found</h2>
+                        <p>The requested app is not available in our database.</p>
+                        <a href="index.html" class="btn btn-primary">Browse Available Apps</a>
+                    </div>`;
+            }
+        });
+
+        // Error handling for failed image loads
+        document.addEventListener('error', function (e) {
+            if (e.target.tagName === 'IMG' && e.target.classList.contains('detail-icon')) {
+                const appName = document.querySelector('.detail-title')?.textContent || 'App';
+                const firstLetter = appName.charAt(0).toUpperCase();
+                e.target.src = `https://via.placeholder.com/120/7b4dff/ffffff?text=${encodeURIComponent(firstLetter)}`;
+            }
+        }, true);
+    </script>
+</body>
+
+</html>
