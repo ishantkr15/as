@@ -3,12 +3,22 @@
 
 <head>
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K59VLNJ6');</script>
-<!-- End Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-K59VLNJ6');
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - AsMultiverse</title>
@@ -85,6 +95,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             color: transparent;
         }
 
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(123, 77, 255, 0.1);
+            color: var(--secondary);
+        }
+
         .join-btn {
             padding: 0.7rem 1.5rem;
             border-radius: 50px;
@@ -103,6 +136,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background: rgba(123, 77, 255, 0.1);
             border-color: var(--primary);
             transform: translateY(-2px);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
         }
 
         /* Main Container */
@@ -447,6 +489,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 padding: 1.2rem 1.5rem;
             }
 
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 26, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 1rem;
+                border-top: 1px solid var(--border);
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
             .detail-title {
                 font-size: 2.5rem;
             }
@@ -467,12 +531,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
 
             .navbar {
-                flex-direction: column;
-                gap: 1rem;
+                flex-direction: row;
             }
 
             .logo a {
                 font-size: 1.5rem;
+            }
+
+            .form-footer {
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: flex-start;
             }
         }
     </style>
@@ -480,9 +549,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K59VLNJ6"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K59VLNJ6" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <nav class="navbar">
         <div class="logo">
@@ -503,13 +572,108 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
             <li><a href="contact.html"><i class="fas fa-comment"></i> Contact</a></li>
         </ul>
-
     </nav>
 
-    <!-- ... Rest of body ... -->
-
     <div class="container detail-container">
-        <!-- ... content ... -->
+        <div class="detail-header">
+            <h1 class="detail-title">Contact Us</h1>
+            <p class="detail-subtitle">Have questions, suggestions, or just want to say hello? We'd love to hear from
+                you. Reach out to us using the form or contact details below.</p>
+        </div>
+
+        <div class="contact-layout">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Response Time</h4>
+                            <p>24-48 hours</p>
+                            <p>We value every message and respond promptly</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 2rem;">Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <div id="formStatus" class="form-status"></div>
+
+                <form id="contactForm" action="https://formsubmit.co/ishant150407@gmail.com" method="POST">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://www.asmultiverse.in/thankyou.html">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - AsMultiverse">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                            <div class="error-message">Please enter your name</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                            <div class="error-message">Please enter a valid email address</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" required placeholder="Regarding...">
+                        <div class="error-message">Please enter a subject</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category" name="category">
+                            <option value="">Select a category</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="support">Technical Support</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="collaboration">Collaboration</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required
+                            placeholder="Write your message here..."></textarea>
+                        <div class="error-message">Please enter your message</div>
+                    </div>
+
+                    <div class="form-footer">
+                        <button type="submit" id="submitBtn" class="btn-submit">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                        <p class="form-note">Fields marked with * are required. We respect your privacy.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -525,265 +689,182 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function () {
+                    navLinks.classList.toggle('active');
+                });
+            }
+
+            // Contact form handling
             const form = document.getElementById('contactForm');
-            // ... (keep existing form validation script)
-        });
-    </script>
-    <script src="script.js"></script>
-</body>
+            const submitBtn = document.getElementById('submitBtn');
+            const formStatus = document.getElementById('formStatus');
 
-<div class="container detail-container">
-    <div class="detail-header">
-        <h1 class="detail-title">Contact Us</h1>
-        <p class="detail-subtitle">Have questions, suggestions, or just want to say hello? We'd love to hear from
-            you. Reach out to us using the form or contact details below.</p>
-    </div>
+            if (form) {
+                // Form validation
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
 
-    <div class="contact-layout">
-        <!-- Contact Information -->
-        <div class="contact-info">
-            <h3>Get in Touch</h3>
-            <div class="contact-methods">
+                    // Reset previous errors
+                    const errorGroups = document.querySelectorAll('.form-group.error');
+                    errorGroups.forEach(group => {
+                        group.classList.remove('error');
+                    });
 
+                    // Validate form
+                    let isValid = true;
 
-                <div class="contact-method">
-                    <div class="contact-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h4>Response Time</h4>
-                        <p>24-48 hours</p>
-                        <p>We value every message and respond promptly</p>
-                    </div>
-                </div>
-            </div>
+                    // Name validation
+                    const nameInput = document.getElementById('name');
+                    if (!nameInput.value.trim()) {
+                        nameInput.parentElement.classList.add('error');
+                        isValid = false;
+                    }
 
-            <h3 style="margin-top: 2rem;">Follow Us</h3>
-            <div class="social-links">
-                <a href="#" class="social-link">
-                    <i class="fab fa-telegram"></i>
-                </a>
-                <a href="#" class="social-link">
-                    <i class="fab fa-youtube"></i>
-                </a>
-                <a href="#" class="social-link">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="social-link">
-                    <i class="fab fa-twitter"></i>
-                </a>
-            </div>
-        </div>
+                    // Email validation
+                    const emailInput = document.getElementById('email');
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(emailInput.value.trim())) {
+                        emailInput.parentElement.classList.add('error');
+                        isValid = false;
+                    }
 
-        <!-- Contact Form -->
-        <div class="contact-form">
-            <div id="formStatus" class="form-status"></div>
+                    // Subject validation
+                    const subjectInput = document.getElementById('subject');
+                    if (!subjectInput.value.trim()) {
+                        subjectInput.parentElement.classList.add('error');
+                        isValid = false;
+                    }
 
-            <form id="contactForm" action="https://formsubmit.co/ishant150407@gmail.com" method="POST">
-                <!-- Anti-spam / Configuration -->
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="#">
-                <input type="hidden" name="_template" value="table">
+                    // Message validation
+                    const messageInput = document.getElementById('message');
+                    if (!messageInput.value.trim()) {
+                        messageInput.parentElement.classList.add('error');
+                        isValid = false;
+                    }
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Your Name *</label>
-                        <input type="text" id="name" name="name" required placeholder="John Doe">
-                        <div class="error-message">Please enter your name</div>
-                    </div>
+                    if (isValid) {
+                        // Show loading state
+                        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                        submitBtn.disabled = true;
 
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required placeholder="john@example.com">
-                        <div class="error-message">Please enter a valid email address</div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="subject">Subject *</label>
-                    <input type="text" id="subject" name="subject" required placeholder="Regarding...">
-                    <div class="error-message">Please enter a subject</div>
-                </div>
-
-                <div class="form-group">
-                    <label for="category">Category</label>
-                    <select id="category" name="category">
-                        <option value="">Select a category</option>
-                        <option value="general">General Inquiry</option>
-                        <option value="support">Technical Support</option>
-                        <option value="feedback">Feedback</option>
-                        <option value="collaboration">Collaboration</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" rows="5" required
-                        placeholder="Write your message here..."></textarea>
-                    <div class="error-message">Please enter your message</div>
-                </div>
-
-                <div class="form-footer">
-                    <button type="submit" id="submitBtn" class="btn-submit">
-                        <i class="fas fa-paper-plane"></i> Send Message
-                    </button>
-                    <p class="form-note">Fields marked with * are required. We respect your privacy.</p>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- Footer -->
-<footer>
-    <div class="footer-social-links">
-        <a href="#"><i class="fab fa-telegram"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-github"></i></a>
-    </div>
-    <p>&copy; 2026 AsMultiverse. All rights reserved. | Exploring infinite possibilities</p>
-</footer>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const form = document.getElementById('contactForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const formStatus = document.getElementById('formStatus');
-
-        // Form validation
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Reset previous errors
-            const errorGroups = document.querySelectorAll('.form-group.error');
-            errorGroups.forEach(group => {
-                group.classList.remove('error');
-            });
-
-            // Validate form
-            let isValid = true;
-
-            // Name validation
-            const nameInput = document.getElementById('name');
-            if (!nameInput.value.trim()) {
-                nameInput.parentElement.classList.add('error');
-                isValid = false;
-            }
-
-            // Email validation
-            const emailInput = document.getElementById('email');
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(emailInput.value.trim())) {
-                emailInput.parentElement.classList.add('error');
-                isValid = false;
-            }
-
-            // Subject validation
-            const subjectInput = document.getElementById('subject');
-            if (!subjectInput.value.trim()) {
-                subjectInput.parentElement.classList.add('error');
-                isValid = false;
-            }
-
-            // Message validation
-            const messageInput = document.getElementById('message');
-            if (!messageInput.value.trim()) {
-                messageInput.parentElement.classList.add('error');
-                isValid = false;
-            }
-
-            if (isValid) {
-                // Show loading state
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                submitBtn.disabled = true;
-
-                // Simulate form submission
-                setTimeout(() => {
-                    // Show success message
-                    formStatus.className = 'form-status success';
-                    formStatus.innerHTML = `
-                            <i class="fas fa-check-circle"></i>
+                        // Submit form to FormSubmit
+                        const formData = new FormData(form);
+                        
+                        // Add timestamp
+                        formData.append('_timestamp', new Date().toISOString());
+                        
+                        // Show sending message
+                        formStatus.className = 'form-status success';
+                        formStatus.innerHTML = `
+                            <i class="fas fa-spinner fa-spin"></i>
                             <div>
-                                <strong>Message sent successfully!</strong>
-                                <p>Thank you for contacting us. We'll respond as soon as possible.</p>
+                                <strong>Sending your message...</strong>
+                                <p>Please wait a moment.</p>
                             </div>
                         `;
 
-                    // Reset form
-                    form.reset();
+                        // Submit form
+                        fetch(form.action, {
+                            method: 'POST',
+                            body: formData,
+                            mode: 'no-cors' // Important for FormSubmit
+                        }).then(() => {
+                            // FormSubmit will handle the redirect via the _next parameter
+                            // We'll show a success message for a few seconds before redirect
+                            formStatus.className = 'form-status success';
+                            formStatus.innerHTML = `
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Message sent successfully!</strong>
+                                    <p>Redirecting to thank you page...</p>
+                                </div>
+                            `;
 
-                    // Reset button
-                    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-                    submitBtn.disabled = false;
+                            // Redirect after 2 seconds
+                            setTimeout(() => {
+                                window.location.href = 'https://www.asmultiverse.in/thankyou.html';
+                            }, 2000);
+                        }).catch(error => {
+                            console.error('Form submission error:', error);
+                            formStatus.className = 'form-status error';
+                            formStatus.innerHTML = `
+                                <i class="fas fa-exclamation-circle"></i>
+                                <div>
+                                    <strong>Error sending message</strong>
+                                    <p>Please try again or contact us directly.</p>
+                                </div>
+                            `;
 
-                    // Hide success message after 5 seconds
-                    setTimeout(() => {
-                        formStatus.className = 'form-status';
-                        formStatus.innerHTML = '';
-                    }, 5000);
-                }, 1500);
+                            // Reset button
+                            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+                            submitBtn.disabled = false;
 
-                // In a real scenario, you would submit the form here
-                // form.submit();
-            } else {
-                // Show error message
-                formStatus.className = 'form-status error';
-                formStatus.innerHTML = `
-                        <i class="fas fa-exclamation-circle"></i>
-                        <div>
-                            <strong>Please fix the errors above</strong>
-                            <p>Some required fields are missing or incorrect.</p>
-                        </div>
-                    `;
+                            // Hide error message after 5 seconds
+                            setTimeout(() => {
+                                formStatus.className = 'form-status';
+                                formStatus.innerHTML = '';
+                            }, 5000);
+                        });
+                    } else {
+                        // Show error message
+                        formStatus.className = 'form-status error';
+                        formStatus.innerHTML = `
+                            <i class="fas fa-exclamation-circle"></i>
+                            <div>
+                                <strong>Please fix the errors above</strong>
+                                <p>Some required fields are missing or incorrect.</p>
+                            </div>
+                        `;
 
-                // Hide error message after 5 seconds
-                setTimeout(() => {
-                    formStatus.className = 'form-status';
-                    formStatus.innerHTML = '';
-                }, 5000);
+                        // Hide error message after 5 seconds
+                        setTimeout(() => {
+                            formStatus.className = 'form-status';
+                            formStatus.innerHTML = '';
+                        }, 5000);
+                    }
+                });
+
+                // Real-time validation
+                const inputs = document.querySelectorAll('#contactForm input, #contactForm textarea, #contactForm select');
+                inputs.forEach(input => {
+                    input.addEventListener('blur', function () {
+                        validateField(this);
+                    });
+
+                    input.addEventListener('input', function () {
+                        if (this.parentElement.classList.contains('error')) {
+                            validateField(this);
+                        }
+                    });
+                });
+
+                function validateField(field) {
+                    const parent = field.parentElement;
+
+                    if (field.hasAttribute('required') && !field.value.trim()) {
+                        parent.classList.add('error');
+                        return false;
+                    }
+
+                    if (field.type === 'email' && field.value.trim()) {
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailRegex.test(field.value.trim())) {
+                            parent.classList.add('error');
+                            return false;
+                        }
+                    }
+
+                    parent.classList.remove('error');
+                    return true;
+                }
             }
         });
-
-        // Real-time validation
-        const inputs = document.querySelectorAll('#contactForm input, #contactForm textarea, #contactForm select');
-        inputs.forEach(input => {
-            input.addEventListener('blur', function () {
-                validateField(this);
-            });
-
-            input.addEventListener('input', function () {
-                if (this.parentElement.classList.contains('error')) {
-                    validateField(this);
-                }
-            });
-        });
-
-        function validateField(field) {
-            const parent = field.parentElement;
-
-            if (field.hasAttribute('required') && !field.value.trim()) {
-                parent.classList.add('error');
-                return false;
-            }
-
-            if (field.type === 'email' && field.value.trim()) {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(field.value.trim())) {
-                    parent.classList.add('error');
-                    return false;
-                }
-            }
-
-            parent.classList.remove('error');
-            return true;
-        }
-    });
-</script>
-
-<script src="script.js"></script>
+    </script>
 </body>
-
 
 </html>
