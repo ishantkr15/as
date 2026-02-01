@@ -20,6 +20,7 @@
     </script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
+    <link rel="icon" href="logo.jpg" type="image/jpeg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - AsMultiverse</title>
     <link rel="stylesheet" href="style.css">
@@ -754,10 +755,10 @@
 
                         // Submit form to FormSubmit
                         const formData = new FormData(form);
-                        
+
                         // Add timestamp
                         formData.append('_timestamp', new Date().toISOString());
-                        
+
                         // Show sending message
                         formStatus.className = 'form-status success';
                         formStatus.innerHTML = `
