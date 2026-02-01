@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="logo.jpg" type="image/jpeg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - AsMultiverse</title>
     <link rel="stylesheet" href="style.css">
@@ -742,8 +743,27 @@
 
         // --- Dashboard Logic ---
         function initDashboard() {
+            // Load from LocalStorage if available, otherwise use default data
+            const storedData = localStorage.getItem('asMultiverseApps');
+            if (storedData) {
+                try {
+                    appsData = JSON.parse(storedData);
+                    console.log('Loaded data from LocalStorage');
+                } catch (e) {
+                    console.error('Error parsing LocalStorage data', e);
+                }
+            } else if (window.appsData) {
+                // If no local storage, use data.js but initialize local storage for consistency
+                appsData = window.appsData;
+                saveToStorage();
+            }
+
             renderTable();
             updateStats();
+        }
+
+        function saveToStorage() {
+            localStorage.setItem('asMultiverseApps', JSON.stringify(appsData));
         }
 
         function updateStats() {
@@ -790,6 +810,7 @@
             if (confirm(`Delete ${appsData[index].name}?`)) {
                 logAction(`Deleted app: ${appsData[index].name}`);
                 appsData.splice(index, 1);
+                saveToStorage();
                 renderTable();
             }
         }
@@ -865,6 +886,8 @@
                 appsData.unshift(appData);
                 logAction(`Added new app: ${appData.name}`);
             }
+
+            saveToStorage();
 
             renderTable();
             resetForm();
