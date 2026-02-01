@@ -1,5 +1,22 @@
-window.lastUpdated = "2/1/2026, 10:11:16 PM";
+window.lastUpdated = "2/1/2026, 11:13:00 PM";
 window.appsData = [
+  {
+    "id": "apna-college-mod-apk",
+    "name": "Apna College Mod Apk",
+    "developer": "MadXAbhi",
+    "version": "1.21.6",
+    "size": "21 MB",
+    "downloads": "55000+",
+    "tags": [
+      "New"
+    ],
+    "iconUrl": "https://i.ibb.co/0y74Ks8X/x.jpg",
+    "downloadUrl": "https://lksfy.com/Apna_college",
+    "description": "Get all Apna College paid courses for free! Download the latest modded APK for 2026 with unlocked Delta 3.0, DSA, Java, & Web Development courses. No subscription required. Install guide included.\n\nFeatures List:\n\nAll Delta 3.0 courses unlocked (Java, DSA, Web Dev, etc.)\n\nNo subscription or login required.\n\nDownload videos for offline viewing.\n\nAll premium features activated.\n\nAds removed from the app.\n\nDisclaimer (for project realism): \"This is for educational purposes only. We encourage users to support the original developers by purchasing subscriptions from the official Google Play Store if they can afford it.\"",
+    "seoTitle": "Apna College All Courses Free 2026 | Download Mod APK (Unlocked Premium)",
+    "seoKeywords": "apna college mod apk, apna college premium unlocked apk, apna college all courses free download, apna college delta 3.0 mod, apna college paid courses free apk, apna college cracked app 2024, download apna college premium for free, apna college pro version apk, get apna college course without payment, apna college hack apk latest version, apna college unlocked courses, free premium courses apna college, apna college modded app, apna college cracked version, apna college premium courses free",
+    "seoDesc": "Get all Apna College paid courses for free! Download the latest modded APK for 2026 with unlocked Delta 3.0, DSA, Java, & Web Development courses. No subscription required. Install guide included."
+  },
   {
     "id": "Career Will",
     "name": "Career Will",
