@@ -1,5 +1,22 @@
-window.lastUpdated = "2/1/2026, 11:13:00 PM";
+window.lastUpdated = "2/2/2026, 1:59:17 PM";
 window.appsData = [
+  {
+    "id": "Ishitube",
+    "name": "IshiTube: YouTube Mod & Downloader",
+    "developer": "Ishant Kumar",
+    "version": "v3.95",
+    "size": "20 MB",
+    "downloads": "1 M+",
+    "tags": [
+      "New"
+    ],
+    "iconUrl": "https://raw.githubusercontent.com/ishantkr15/icons/refs/heads/main/IshiTube.png",
+    "downloadUrl": "https://lksfy.com/IshiTube",
+    "description": "Download IshiTube, the advanced YouTube mod APK with a built-in video downloader (MP4/MP3), background play, ad-blocking, and all premium features unlocked. No root required. Safe & free 2026.",
+    "seoTitle": "The Ultimate IshiTube APK: Ad-Free YouTube with Inbuilt Video Downloader & Premium Unlocke",
+    "seoKeywords": "ishitube apk, ishitube download, youtube mod apk with downloader, youtube premium free apk, background play youtube, ad free youtube app, download youtube videos offline, youtube mod no ads, youtube revanced alternative, ishitube latest version 2024, youtube video downloader app, youtube music mod, ishitube premium unlocked, pip mode youtube, youtube mod background play, ishitube android, youtube vanced alternative, free youtube premium features, ishitube apk 2024, video downloader built-in,outube mod with inbuilt downloader 2024, best youtube mod for downloading videos, how to get youtube premium for free permanently, ishitube vs youtube revanced, adfree youtube with background play apk, download youtube videos without external app, ishitube features and how to install",
+    "seoDesc": "Download IshiTube, the advanced YouTube mod APK with a built-in video downloader (MP4/MP3), background play, ad-blocking, and all premium features unlocked. No root required. Safe & free 2026."
+  },
   {
     "id": "apna-college-mod-apk",
     "name": "Apna College Mod Apk",
