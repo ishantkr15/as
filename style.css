@@ -2024,3 +2024,71 @@ body {
         gap: 1rem;
     }
 }
+
+/* Floating Instagram Icon */
+.floating-instagram {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    box-shadow: 0 10px 25px rgba(214, 36, 159, 0.5);
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 0;
+}
+
+.floating-instagram:hover {
+    width: 180px;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(214, 36, 159, 0.6);
+    justify-content: space-evenly;
+}
+
+.follow-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    opacity: 0;
+    max-width: 0;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    transform: translateX(20px);
+}
+
+.floating-instagram:hover .follow-text {
+    opacity: 1;
+    max-width: 100px;
+    transform: translateX(0);
+}
+
+.floating-instagram i {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.floating-instagram:hover i {
+    transform: rotate(360deg) scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .floating-instagram {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    /* Removed expansion restrictions for mobile based on user request */
+}
