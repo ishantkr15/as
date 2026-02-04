@@ -1,8 +1,8 @@
-window.lastUpdated = "2/2/2026, 1:59:17 PM";
+window.lastUpdated = "2/4/2026, 10:52:05 PM";
 window.appsData = [
   {
     "id": "Ishitube",
-    "name": "IshiTube: YouTube Mod & Downloader",
+    "name": "IshiTube: YouTube Premium & Downloader",
     "developer": "Ishant Kumar",
     "version": "v3.95",
     "size": "20 MB",
@@ -19,7 +19,7 @@ window.appsData = [
   },
   {
     "id": "apna-college-mod-apk",
-    "name": "Apna College Mod Apk",
+    "name": "Apna College Unlocked Apk",
     "developer": "MadXAbhi",
     "version": "1.21.6",
     "size": "21 MB",
