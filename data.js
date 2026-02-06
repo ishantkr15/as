@@ -1,5 +1,22 @@
-window.lastUpdated = "2/6/2026, 5:51:20 PM";
+window.lastUpdated = "2/6/2026, 7:33:34 PM";
 window.appsData = [
+  {
+    "id": "as",
+    "name": "AS MULTIVERSE",
+    "developer": "MadXAbhi",
+    "version": "v5.02.7",
+    "size": "24 MB",
+    "downloads": "100K +",
+    "tags": [
+      "Educational"
+    ],
+    "iconUrl": "https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e00a5c58-461c-4c43-a911-d606e00ad53b.png",
+    "downloadUrl": "https://vplink.in/pwmodnew",
+    "description": "",
+    "seoTitle": "",
+    "seoKeywords": "",
+    "seoDesc": ""
+  },
   {
     "id": "Ishitube",
     "name": "IshiTube: YouTube Mod & Downloader",
