@@ -1,7 +1,7 @@
 window.lastUpdated = "2/6/2026, 7:33:34 PM";
 window.appsData = [
   {
-    "id": "as",
+    "id": "as-multiverse",
     "name": "AS MULTIVERSE",
     "developer": "MadXAbhi",
     "version": "v5.02.7",
@@ -211,3 +211,4 @@ window.appsData = [
     "seoDesc": ""
   }
 ];
+
