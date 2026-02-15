@@ -14,11 +14,143 @@
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Details - AsMultiverse</title>
+    <link rel="icon" href="favicon.jpg" type="image/jpeg">
+    <title>Educational App Details | As Multiverse</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Preload critical resources -->
     <link rel="preload" href="data.js" as="script">
+
+    <style>
+        /* How to Download Button */
+        .btn-how-to-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 1rem;
+            padding: 0.9rem 2rem;
+            background: linear-gradient(135deg, #ff6b35, #f7c948);
+            color: #1a1a2e;
+            font-weight: 700;
+            font-size: 1rem;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+            text-decoration: none;
+        }
+
+        .btn-how-to-download:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
+        }
+
+        .btn-how-to-download i {
+            font-size: 1.2rem;
+        }
+
+        /* Video Modal Overlay */
+        .video-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            animation: fadeInModal 0.3s ease;
+        }
+
+        .video-modal-overlay.active {
+            display: flex;
+        }
+
+        @keyframes fadeInModal {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .video-modal {
+            background: rgba(18, 18, 45, 0.95);
+            border: 1px solid rgba(123, 77, 255, 0.3);
+            border-radius: 20px;
+            padding: 1.5rem;
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .video-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .video-modal-header h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .video-modal-header h3 i {
+            color: #ff6b35;
+        }
+
+        .video-modal-close {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-modal-close:hover {
+            background: rgba(255, 82, 82, 0.3);
+            border-color: #ff5252;
+            color: #ff5252;
+        }
+
+        .video-modal .video-wrapper {
+            position: relative;
+            padding-bottom: 177.78%;
+            height: 0;
+            max-height: 75vh;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .video-modal .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 12px;
+        }
+    </style>
 </head>
 
 <body>
@@ -66,7 +198,7 @@
                     <h3>AS MULTIVERSE</h3>
                 </div>
                 <p class="footer-description">
-                    Your trusted source for educational applications and premium mod APKs. Download safely and freely.
+                    Your trusted source for free educational applications and learning resources.
                 </p>
                 <div class="footer-social">
                     <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook"></i></a>
@@ -123,6 +255,22 @@
         <i class="fab fa-instagram"></i>
     </a>
 
+    <!-- How to Download Video Modal -->
+    <div class="video-modal-overlay" id="videoModalOverlay">
+        <div class="video-modal">
+            <div class="video-modal-header">
+                <h3><i class="fas fa-play-circle"></i> How to Download</h3>
+                <button class="video-modal-close" onclick="closeVideoModal()" aria-label="Close video">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="video-wrapper">
+                <iframe id="ytPlayer" src="" title="How to Download - Tutorial" allowfullscreen
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            </div>
+        </div>
+    </div>
+
     <script src="data.js"></script>
     <script>
         // Set current year in footer
@@ -150,7 +298,7 @@
 
             if (app) {
                 // SEO Setup
-                document.title = app.seoTitle ? app.seoTitle : `${app.name} - Download Mod APK | AsMultiverse`;
+                document.title = app.seoTitle ? app.seoTitle : `${app.name} | Free Educational App - As Multiverse`;
 
                 // Update meta description
                 let metaDesc = document.querySelector('meta[name="description"]');
@@ -159,7 +307,7 @@
                     metaDesc.name = "description";
                     document.head.appendChild(metaDesc);
                 }
-                metaDesc.content = app.seoDesc || `Download ${app.name} ${app.version} Mod APK. Premium features unlocked, safe download on AsMultiverse.`;
+                metaDesc.content = app.seoDesc || `Download ${app.name} ${app.version} — free educational app with full features. Available exclusively at As Multiverse. Start your learning journey today.`;
 
                 // Update meta keywords
                 let metaKeys = document.querySelector('meta[name="keywords"]');
@@ -168,7 +316,7 @@
                     metaKeys.name = "keywords";
                     document.head.appendChild(metaKeys);
                 }
-                metaKeys.content = app.seoKeywords || `${app.name}, mod apk, premium unlocked, android app, download, ${app.category}`;
+                metaKeys.content = app.seoKeywords || `${app.name}, free educational app, learning resources, app download, As Multiverse, ${app.category}`;
 
                 // Render app details
                 container.innerHTML = `
@@ -177,7 +325,7 @@
                             <div class="app-icon-container">
                                 <img src="${app.iconUrl}" alt="${app.name} Icon" class="detail-icon" 
                                      onerror="this.src='https://via.placeholder.com/120/7b4dff/ffffff?text=${encodeURIComponent(app.name.substring(0, 1))}'">
-                                <div class="app-badge">MOD</div>
+                                <div class="app-badge">FREE</div>
                             </div>
                             <div class="app-title-section">
                                 <h1 class="detail-title">${app.name}</h1>
@@ -219,13 +367,16 @@
                                aria-label="Download ${app.name}">
                                 <i class="fas fa-cloud-download-alt"></i> 
                                 <span>Download Now</span>
-                                <small>${app.size} • Premium Unlocked</small>
+                                <small>${app.size} • Full Access</small>
                             </a>
                             <div class="download-info">
                                 <p><i class="fas fa-check-circle"></i> Safe & Verified</p>
                                 <p><i class="fas fa-bolt"></i> No Ads</p>
                                 <p><i class="fas fa-lock-open"></i> Premium Features</p>
                             </div>
+                            <button class="btn-how-to-download" onclick="openVideoModal()">
+                                <i class="fas fa-play-circle"></i> How to Download
+                            </button>
                         </div>
 
                         <div class="detail-section">
@@ -234,7 +385,7 @@
                             
                             ${app.features ? `
                             <div class="features-section">
-                                <h4><i class="fas fa-star"></i> MOD Features</h4>
+                                <h4><i class="fas fa-star"></i> Key Features</h4>
                                 <ul class="features-list">
                                     ${app.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
                                 </ul>
@@ -292,7 +443,7 @@
                     { property: "og:image", content: app.iconUrl },
                     { property: "og:url", content: window.location.href },
                     { property: "og:type", content: "website" },
-                    { property: "og:site_name", content: "AsMultiverse" },
+                    { property: "og:site_name", content: "As Multiverse" },
                     { property: "twitter:card", content: "summary_large_image" },
                     { property: "twitter:title", content: app.seoTitle || app.name },
                     { property: "twitter:description", content: app.seoDesc || app.description.substring(0, 160) },
@@ -371,6 +522,35 @@
                 e.target.src = `https://via.placeholder.com/120/7b4dff/ffffff?text=${encodeURIComponent(firstLetter)}`;
             }
         }, true);
+    </script>
+
+    <script>
+        // Video Modal Logic
+        function openVideoModal() {
+            const overlay = document.getElementById('videoModalOverlay');
+            const player = document.getElementById('ytPlayer');
+            player.src = 'https://www.youtube.com/embed/Kf0DV4OCfg0?autoplay=1&rel=0';
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoModal() {
+            const overlay = document.getElementById('videoModalOverlay');
+            const player = document.getElementById('ytPlayer');
+            player.src = '';
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on overlay click
+        document.getElementById('videoModalOverlay').addEventListener('click', function (e) {
+            if (e.target === this) closeVideoModal();
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeVideoModal();
+        });
     </script>
 </body>
 
