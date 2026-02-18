@@ -107,6 +107,27 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.adsbygoogle').forEach(ad => {
             adObserver.observe(ad);
         });
+
+        // MutationObserver to show ad container only when ad is filled
+        const mutationObserver = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'data-ad-status') {
+                    const ad = mutation.target;
+                    const status = ad.getAttribute('data-ad-status');
+                    const container = ad.closest('.ad-container');
+
+                    if (status === 'filled' && container) {
+                        container.classList.add('ad-visible');
+                    } else if (status === 'unfilled' && container) {
+                        container.style.display = 'none'; // Completely hide if unfilled
+                    }
+                }
+            });
+        });
+
+        document.querySelectorAll('.adsbygoogle').forEach(ad => {
+            mutationObserver.observe(ad, { attributes: true, attributeFilter: ['data-ad-status'] });
+        });
     }
 
     // Filter Functionality
