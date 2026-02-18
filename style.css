@@ -805,6 +805,56 @@ footer {
     margin-bottom: 1.5rem;
 }
 
+/* AdSense In-Feed Styles */
+.ad-container {
+    display: none;
+    /* Hidden by default (Desktop/Tablet) */
+}
+
+/* Mobile Ad Styles */
+@media (max-width: 768px) {
+    .ad-container {
+        display: block;
+        margin: 1.5rem 0;
+        background: rgba(255, 255, 255, 0.05);
+        /* Slight background to separate */
+        padding: 1rem;
+        border-radius: 12px;
+        position: relative;
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .ad-close-btn {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 1.5rem;
+        color: #fff;
+        opacity: 0.7;
+        cursor: pointer;
+        z-index: 10;
+        line-height: 1;
+        padding: 5px;
+    }
+
+    .ad-close-btn:hover {
+        opacity: 1;
+        color: #ff5252;
+    }
+
+    .ad-label {
+        font-size: 0.7rem;
+        color: #a0a0b0;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        text-align: left;
+    }
+}
+
 .btn-download-main:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(123, 77, 255, 0.4);
