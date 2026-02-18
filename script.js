@@ -66,6 +66,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
             grid.appendChild(card);
+
+            // Insert Ad after every app
+            const adContainer = document.createElement('div');
+            adContainer.className = 'ad-container';
+            adContainer.innerHTML = `
+                <div class="ad-close-btn" onclick="this.parentElement.style.display='none';">&times;</div>
+                <div class="ad-label">Sponsored</div>
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-format="fluid"
+                     data-ad-layout-key="-6t+ed+2i-1n-4w"
+                     data-ad-client="ca-pub-6608561504651468"
+                     data-ad-slot="7626019470"></ins>
+            `;
+            grid.appendChild(adContainer);
+
+            // Initialize Ad
+            try {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (e) {
+                console.error("AdSense error:", e);
+            }
         });
     }
 
