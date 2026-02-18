@@ -816,9 +816,7 @@ footer {
     .ad-container {
         display: block;
         margin: 1.5rem 0;
-        background: rgba(255, 255, 255, 0.05);
-        /* Slight background to separate */
-        padding: 1rem;
+        /* Background and padding removed by default */
         border-radius: 12px;
         position: relative;
         text-align: center;
@@ -826,6 +824,14 @@ footer {
         max-width: 100%;
         box-sizing: border-box;
         overflow: hidden;
+        min-height: 0;
+        /* Ensure it doesn't take space if empty, though ad script might resize it */
+    }
+
+    /* Styles applied only when ad is loaded */
+    .ad-container.ad-visible {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 1rem;
     }
 
     .ad-close-btn {
@@ -839,6 +845,12 @@ footer {
         z-index: 10;
         line-height: 1;
         padding: 5px;
+        display: none;
+        /* Hidden by default */
+    }
+
+    .ad-container.ad-visible .ad-close-btn {
+        display: block;
     }
 
     .ad-close-btn:hover {
@@ -852,6 +864,12 @@ footer {
         text-transform: uppercase;
         margin-bottom: 5px;
         text-align: left;
+        display: none;
+        /* Hidden by default */
+    }
+
+    .ad-container.ad-visible .ad-label {
+        display: block;
     }
 }
 
