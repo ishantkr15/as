@@ -70,6 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Insert Ad after every app
             const adContainer = document.createElement('div');
             adContainer.className = 'ad-container';
+
+            // Alternate between two ad slots for variety
+            const adSlot = (index % 2 === 0) ? "7626019470" : "5157427363";
+
             adContainer.innerHTML = `
                 <div class="ad-close-btn" onclick="this.parentElement.style.display='none';">&times;</div>
                 <div class="ad-label">Sponsored</div>
@@ -78,16 +82,30 @@ document.addEventListener('DOMContentLoaded', () => {
                      data-ad-format="fluid"
                      data-ad-layout-key="-6t+ed+2i-1n-4w"
                      data-ad-client="ca-pub-6608561504651468"
-                     data-ad-slot="7626019470"></ins>
+                     data-ad-slot="${adSlot}"></ins>
             `;
             grid.appendChild(adContainer);
 
-            // Initialize Ad
-            try {
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            } catch (e) {
-                console.error("AdSense error:", e);
-            }
+            grid.appendChild(adContainer);
+        });
+
+        // Lazy Load Ads
+        const adObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const ad = entry.target;
+                    try {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                        observer.unobserve(ad);
+                    } catch (e) {
+                        console.error("AdSense error:", e);
+                    }
+                }
+            });
+        }, { rootMargin: "200px" }); // Preload 200px before view
+
+        document.querySelectorAll('.adsbygoogle').forEach(ad => {
+            adObserver.observe(ad);
         });
     }
 
