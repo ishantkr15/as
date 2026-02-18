@@ -67,14 +67,26 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             grid.appendChild(card);
 
-            // Insert Ad after every app
-            const adContainer = document.createElement('div');
-            adContainer.className = 'ad-container';
+            // Insert Ad after every 2 apps
+            if ((index + 1) % 2 === 0) {
+                const adContainer = document.createElement('div');
+                adContainer.className = 'ad-container';
 
-            // Alternate between two ad slots for variety
-            const adSlot = (index % 2 === 0) ? "7626019470" : "5157427363";
+                // Alternate between three ad slots based on ad count
+                // (index + 1) / 2 gives the ad number: 1, 2, 3...
+                const adIndex = (index + 1) / 2;
+                const remainder = adIndex % 3;
+                let adSlot;
 
-            adContainer.innerHTML = `
+                if (remainder === 1) {
+                    adSlot = "7626019470";
+                } else if (remainder === 2) {
+                    adSlot = "5157427363";
+                } else {
+                    adSlot = "3461202314"; // 3rd Ad Unit
+                }
+
+                adContainer.innerHTML = `
                 <div class="ad-close-btn" onclick="this.parentElement.style.display='none';">&times;</div>
                 <div class="ad-label">Sponsored</div>
                 <ins class="adsbygoogle"
@@ -84,9 +96,8 @@ document.addEventListener('DOMContentLoaded', () => {
                      data-ad-client="ca-pub-6608561504651468"
                      data-ad-slot="${adSlot}"></ins>
             `;
-            grid.appendChild(adContainer);
-
-            grid.appendChild(adContainer);
+                grid.appendChild(adContainer);
+            }
         });
 
         // Lazy Load Ads
@@ -106,27 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.querySelectorAll('.adsbygoogle').forEach(ad => {
             adObserver.observe(ad);
-        });
-
-        // MutationObserver to show ad container only when ad is filled
-        const mutationObserver = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-                if (mutation.type === 'attributes' && mutation.attributeName === 'data-ad-status') {
-                    const ad = mutation.target;
-                    const status = ad.getAttribute('data-ad-status');
-                    const container = ad.closest('.ad-container');
-
-                    if (status === 'filled' && container) {
-                        container.classList.add('ad-visible');
-                    } else if (status === 'unfilled' && container) {
-                        container.style.display = 'none'; // Completely hide if unfilled
-                    }
-                }
-            });
-        });
-
-        document.querySelectorAll('.adsbygoogle').forEach(ad => {
-            mutationObserver.observe(ad, { attributes: true, attributeFilter: ['data-ad-status'] });
         });
     }
 
