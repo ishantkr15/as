@@ -1,4 +1,4 @@
-window.lastUpdated = "3/8/2026, 2:02:31 PM";
+window.lastUpdated = "3/12/2026, 10:14:18 PM";
 window.appsData = [
   {
     "id": "as-multiverse",
@@ -18,7 +18,6 @@ window.appsData = [
     "seoKeywords": "as multiverse, asmultiverse, as multiverse app, as multiverse store, asmultiverse.com, as multiverse website, as multiverse download, educational apps free, jee neet preparation app, competitive exam app, as multiverse 2026",
     "seoDesc": "Download AS Multiverse v5.02.7 — access 12+ free educational apps for JEE, NEET, SSC & competitive exams. Video lectures, notes & test series. Trusted by 100K+ students at asmultiverse.in."
   },
-
   {
     "id": "Utkarsh Classes",
     "name": "Utkarsh Classes",
@@ -47,7 +46,7 @@ window.appsData = [
       "New"
     ],
     "iconUrl": "https://raw.githubusercontent.com/ishantkr15/icons/refs/heads/main/IshiTube.png",
-    "downloadUrl": "https://lksfy.com/IshiTube",
+    "downloadUrl": "https://vplink.in/IshiTube",
     "description": "Download IshiTube, the advanced YouTube mod APK with a built-in video downloader (MP4/MP3), background play, ad-blocking, and all premium features unlocked. No root required. Safe & free 2026.",
     "seoTitle": "The Ultimate IshiTube APK: Ad-Free YouTube with Inbuilt Video Downloader & Premium Unlocke",
     "seoKeywords": "ishitube apk, ishitube download, youtube mod apk with downloader, youtube premium free apk, background play youtube, ad free youtube app, download youtube videos offline, youtube mod no ads, youtube revanced alternative, ishitube latest version 2024, youtube video downloader app, youtube music mod, ishitube premium unlocked, pip mode youtube, youtube mod background play, ishitube android, youtube vanced alternative, free youtube premium features, ishitube apk 2024, video downloader built-in,outube mod with inbuilt downloader 2024, best youtube mod for downloading videos, how to get youtube premium for free permanently, ishitube vs youtube revanced, adfree youtube with background play apk, download youtube videos without external app, ishitube features and how to install",
@@ -64,7 +63,7 @@ window.appsData = [
       "New"
     ],
     "iconUrl": "https://i.ibb.co/0y74Ks8X/x.jpg",
-    "downloadUrl": "https://lksfy.com/Apna_college",
+    "downloadUrl": "https://vplink.in/Apnacollege",
     "description": "Get all Apna College paid courses for free! Download the latest modded APK for 2026 with unlocked Delta 3.0, DSA, Java, & Web Development courses. No subscription required. Install guide included.\n\nFeatures List:\n\nAll Delta 3.0 courses unlocked (Java, DSA, Web Dev, etc.)\n\nNo subscription or login required.\n\nDownload videos for offline viewing.\n\nAll premium features activated.\n\nAds removed from the app.\n\nDisclaimer (for project realism): \"This is for educational purposes only. We encourage users to support the original developers by purchasing subscriptions from the official Google Play Store if they can afford it.\"",
     "seoTitle": "Apna College All Courses Free 2026 | Download Mod APK (Unlocked Premium)",
     "seoKeywords": "apna college mod apk, apna college premium unlocked apk, apna college all courses free download, apna college delta 3.0 mod, apna college paid courses free apk, apna college cracked app 2024, download apna college premium for free, apna college pro version apk, get apna college course without payment, apna college hack apk latest version, apna college unlocked courses, free premium courses apna college, apna college modded app, apna college cracked version, apna college premium courses free",
@@ -81,7 +80,7 @@ window.appsData = [
       ""
     ],
     "iconUrl": "https://i.postimg.cc/D0ghh7s2/IMG-20250927-222606.jpg",
-    "downloadUrl": "https://lksfy.com/Careerwill123",
+    "downloadUrl": "https://vplink.in/care12343",
     "description": "",
     "seoTitle": "",
     "seoKeywords": "",
@@ -98,7 +97,7 @@ window.appsData = [
       "New"
     ],
     "iconUrl": "https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/67a2a82f-5eca-4804-9d47-69f05e3831d1.png",
-    "downloadUrl": "https://lksfy.com/khansir",
+    "downloadUrl": "https://vplink.in/kgskhansir",
     "description": "Best Teacher | Free Education | Live Classes | DPP | Notes",
     "seoTitle": "",
     "seoKeywords": "",
@@ -116,7 +115,7 @@ window.appsData = [
       "New"
     ],
     "iconUrl": "https://i.postimg.cc/Vkm2545X/20250929-160150.jpg",
-    "downloadUrl": "https://lksfy.com/vidhyakul",
+    "downloadUrl": "https://vplink.in/vidhyakul",
     "description": "VidyaKul - The Learning App for Class 9th to 12th, JEE, NEET, AIIMS, and other competitive exams.",
     "seoTitle": "",
     "seoKeywords": "",
@@ -134,7 +133,7 @@ window.appsData = [
       "New"
     ],
     "iconUrl": "https://i.postimg.cc/65HVCbLY/20250923-192017.jpg",
-    "downloadUrl": "https://lksfy.com/kd",
+    "downloadUrl": "https://vplink.in/kdddd",
     "description": "KD Live App for SSC, BANK, RAILWAY, POLICE, NDA, CDS, AIRFORCE, NAVY and other competitive exams.",
     "seoTitle": "",
     "seoKeywords": "",
@@ -152,7 +151,7 @@ window.appsData = [
       "New"
     ],
     "iconUrl": "https://i.ibb.co/9kSMLvKQ/x.jpg",
-    "downloadUrl": "https://lksfy.com/baba",
+    "downloadUrl": "https://vplink.in/edbaba",
     "description": "Best App for Bihar Board Student Class 11th & 12th.",
     "seoTitle": "",
     "seoKeywords": "",
@@ -169,7 +168,7 @@ window.appsData = [
       "Educational"
     ],
     "iconUrl": "https://i.postimg.cc/cLytYbpL/20231229-165646.jpg",
-    "downloadUrl": "https://lksfy.com/rwa",
+    "downloadUrl": "https://vplink.in/rwanewvwerison",
     "description": "Rojgar With Ankit is the most trusted app for competitive exams preparation.",
     "seoTitle": "",
     "seoKeywords": "",
@@ -187,7 +186,7 @@ window.appsData = [
       "Popular"
     ],
     "iconUrl": "https://i.ibb.co/60cF3WS2/x.jpg",
-    "downloadUrl": "https://lksfy.com/selectionway",
+    "downloadUrl": "https://vplink.in/selectionway",
     "description": "Selection Way is an online learning platform for various competitive exams.",
     "seoTitle": "",
     "seoKeywords": "",
@@ -205,7 +204,7 @@ window.appsData = [
       "New"
     ],
     "iconUrl": "https://i.ibb.co/qLdK3Q1d/x.jpg",
-    "downloadUrl": "https://lksfy.com/study",
+    "downloadUrl": "https://vplink.in/studyiq",
     "description": "Study IQ Education is the most loved education platform in India.",
     "seoTitle": "",
     "seoKeywords": "",
@@ -223,7 +222,7 @@ window.appsData = [
       "Popular"
     ],
     "iconUrl": "https://i.postimg.cc/W3v5fRYr/square-icon.png",
-    "downloadUrl": "https://lksfy.com/next",
+    "downloadUrl": "https://vplink.in/Nexttopperss",
     "description": "Next Toppers is a learning app for students.",
     "seoTitle": "NExt toppers mod apk",
     "seoKeywords": "",
