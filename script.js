@@ -67,15 +67,14 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             grid.appendChild(card);
 
-            // Insert Ad after every 2 apps
-            if ((index + 1) % 2 === 0) {
+            // Insert Ad after every 3 apps (Better CPC and User Experience)
+            if ((index + 1) % 3 === 0) {
                 const adContainer = document.createElement('div');
                 adContainer.className = 'ad-container';
 
                 // Alternate between three ad slots based on ad count
-                // (index + 1) / 2 gives the ad number: 1, 2, 3...
-                const adIndex = (index + 1) / 2;
-                const remainder = adIndex % 3;
+                const adIndex = (index + 1) / 3;
+                const remainder = Math.floor(adIndex) % 3;
                 let adSlot;
 
                 if (remainder === 1) {
@@ -87,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 adContainer.innerHTML = `
-                <div class="ad-close-btn" onclick="this.parentElement.style.display='none';">&times;</div>
                 <div class="ad-label">Sponsored</div>
                 <ins class="adsbygoogle"
                      style="display:block"
