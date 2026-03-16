@@ -245,6 +245,6 @@ window.appsData = [
     "seoTitle": "",
     "seoKeywords": "",
     "seoDesc": ""
-  },
+  }
   
 ];
