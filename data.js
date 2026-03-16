@@ -1,22 +1,6 @@
 window.lastUpdated = "3/17/2026, 12:42:30 AM";
 window.appsData = [
-  {
-    "id": "Alarmy",
-    "name": "Alarmy - Alarm Clock Mod Version",
-    "developer": "Unknown",
-    "version": "25.43.1",
-    "size": "122 MB",
-    "downloads": "200k+",
-    "tags": [
-      "Popular"
-    ],
-    "iconUrl": "https://play-lh.googleusercontent.com/gXJLTDIvxXTK6uKl2e3Od_zmrlEul1CbkgxWxjbGeDzLl4EMFsdfER2VEgqAue2v1TE=w240-h480-rw",
-    "downloadUrl": "https://vplink.in/Qd1K",
-    "description": "Tired of oversleeping? Download Alarmy Mod APK with all Premium Features unlocked for free. Complete fun missions to wake up including Math, Photo, & QR tasks!",
-    "seoTitle": "Download Alarmy Mod for Free - Missions & Premium Unlocked",
-    "seoKeywords": "Alarmy mod apk, Alarmy premium unlocked, Alarmy mod version, Alarmy free download, Alarmy android mod, Alarmy wake up challenges, Heavy sleeper alarm clock mod, Alarmy photo mission, Math alarm mod apk, Alarm clock with missions, Download Alarmy mod no ads, Alarmy sleep if u can mod, Best alarm app mod for android, Alarmy v25.35.2 mod free, Alarm clock that makes you get up mod",
-    "seoDesc": "Tired of oversleeping? Download Alarmy Mod APK with all Premium Features unlocked for free. Complete fun missions to wake up including Math, Photo, & QR tasks!"
-  },
+
   {
     "id": "as-multiverse",
     "name": "AS MULTIVERSE",
@@ -34,6 +18,23 @@ window.appsData = [
     "seoTitle": "AS Multiverse v5.02.7 — Free Educational Apps for JEE, NEET & Competitive Exams",
     "seoKeywords": "as multiverse, asmultiverse, as multiverse app, as multiverse store, asmultiverse.com, as multiverse website, as multiverse download, educational apps free, jee neet preparation app, competitive exam app, as multiverse 2026",
     "seoDesc": "Download AS Multiverse v5.02.7 — access 12+ free educational apps for JEE, NEET, SSC & competitive exams. Video lectures, notes & test series. Trusted by 100K+ students at asmultiverse.in."
+  },
+  {
+    "id": "Alarmy",
+    "name": "Alarmy - Alarm Clock Mod Version",
+    "developer": "Unknown",
+    "version": "25.43.1",
+    "size": "122 MB",
+    "downloads": "200k+",
+    "tags": [
+      "Popular"
+    ],
+    "iconUrl": "https://play-lh.googleusercontent.com/gXJLTDIvxXTK6uKl2e3Od_zmrlEul1CbkgxWxjbGeDzLl4EMFsdfER2VEgqAue2v1TE=w240-h480-rw",
+    "downloadUrl": "https://vplink.in/Qd1K",
+    "description": "Tired of oversleeping? Download Alarmy Mod APK with all Premium Features unlocked for free. Complete fun missions to wake up including Math, Photo, & QR tasks!",
+    "seoTitle": "Download Alarmy Mod for Free - Missions & Premium Unlocked",
+    "seoKeywords": "Alarmy mod apk, Alarmy premium unlocked, Alarmy mod version, Alarmy free download, Alarmy android mod, Alarmy wake up challenges, Heavy sleeper alarm clock mod, Alarmy photo mission, Math alarm mod apk, Alarm clock with missions, Download Alarmy mod no ads, Alarmy sleep if u can mod, Best alarm app mod for android, Alarmy v25.35.2 mod free, Alarm clock that makes you get up mod",
+    "seoDesc": "Tired of oversleeping? Download Alarmy Mod APK with all Premium Features unlocked for free. Complete fun missions to wake up including Math, Photo, & QR tasks!"
   },
   {
     "id": "Utkarsh Classes",
