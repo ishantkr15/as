@@ -36,7 +36,7 @@ window.appsData = [
     "seoTitle": "NExt toppers mod apk",
     "seoKeywords": "",
     "seoDesc": ""
-  }
+  },
   {
     "id": "Alarmy",
     "name": "Alarmy - Alarm Clock Mod Version",
