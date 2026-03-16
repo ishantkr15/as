@@ -20,6 +20,24 @@ window.appsData = [
     "seoDesc": "Download AS Multiverse v5.02.7 — access 12+ free educational apps for JEE, NEET, SSC & competitive exams. Video lectures, notes & test series. Trusted by 100K+ students at asmultiverse.in."
   },
   {
+    "id": "next-toppers",
+    "name": "Next Toppers",
+    "developer": "NT MOD APK v14.21.6",
+    "version": "v15.21.6",
+    "size": "21.27 MB",
+    "downloads": "30,000+",
+    "tags": [
+      "Educational",
+      "Popular"
+    ],
+    "iconUrl": "https://i.postimg.cc/W3v5fRYr/square-icon.png",
+    "downloadUrl": "https://vplink.in/Nexttopperss",
+    "description": "Next Toppers is a learning app for students.",
+    "seoTitle": "NExt toppers mod apk",
+    "seoKeywords": "",
+    "seoDesc": ""
+  }
+  {
     "id": "Alarmy",
     "name": "Alarmy - Alarm Clock Mod Version",
     "developer": "Unknown",
@@ -228,22 +246,5 @@ window.appsData = [
     "seoKeywords": "",
     "seoDesc": ""
   },
-  {
-    "id": "next-toppers",
-    "name": "Next Toppers",
-    "developer": "NT MOD APK v14.21.6",
-    "version": "v15.21.6",
-    "size": "21.27 MB",
-    "downloads": "30,000+",
-    "tags": [
-      "Educational",
-      "Popular"
-    ],
-    "iconUrl": "https://i.postimg.cc/W3v5fRYr/square-icon.png",
-    "downloadUrl": "https://vplink.in/Nexttopperss",
-    "description": "Next Toppers is a learning app for students.",
-    "seoTitle": "NExt toppers mod apk",
-    "seoKeywords": "",
-    "seoDesc": ""
-  }
+  
 ];
