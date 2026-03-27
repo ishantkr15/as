@@ -152,6 +152,33 @@
             border: none;
             border-radius: 12px;
         }
+        /* Ad Container Styles */
+        .ad-block {
+            margin: 2rem auto;
+            padding: 1rem;
+            max-width: 728px;
+            text-align: center;
+            background: rgba(18, 18, 45, 0.4);
+            border-radius: 12px;
+            border: 1px solid rgba(123, 77, 255, 0.1);
+            overflow: hidden;
+        }
+
+        .ad-block .ad-label {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .ad-block {
+                margin: 1.5rem auto;
+                padding: 0.8rem;
+                border-radius: 8px;
+            }
+        }
     </style>
 </head>
 
@@ -381,6 +408,17 @@
                             </button>
                         </div>
 
+                        <!-- Ad Unit 1: After Download Section -->
+                        <div class="ad-block">
+                            <div class="ad-label">Sponsored</div>
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-client="ca-pub-6608561504651468"
+                                 data-ad-slot="7626019470"
+                                 data-ad-format="auto"
+                                 data-full-width-responsive="true"></ins>
+                        </div>
+
                         <div class="detail-section">
                             <h3><i class="fas fa-info-circle"></i> About this App</h3>
                             <div class="description-content">${app.description}</div>
@@ -398,6 +436,17 @@
                             ${app.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
                         </div>
                     </div>
+
+                    <!-- Ad Unit 2: Before Related Apps -->
+                    <div class="ad-block">
+                        <div class="ad-label">Sponsored</div>
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-6608561504651468"
+                             data-ad-slot="5157427363"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                    </div>
                     
                     ${apps.filter(a => a.id !== app.id).length > 0 ? `
                     <div class="related-apps-section">
@@ -405,6 +454,17 @@
                         <div class="related-apps-grid" id="relatedApps">
                             <!-- Related apps will be populated here -->
                         </div>
+                    </div>
+                    
+                    <!-- Ad Unit 3: After Related Apps -->
+                    <div class="ad-block">
+                        <div class="ad-label">Sponsored</div>
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-6608561504651468"
+                             data-ad-slot="3461202314"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
                     </div>` : ''}
                 `;
 
@@ -503,6 +563,15 @@
                             relatedContainer.appendChild(rCard);
                         });
                     }
+
+                    // Initialize all ad units on the page
+                    document.querySelectorAll('.ad-block .adsbygoogle').forEach(ad => {
+                        try {
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        } catch (e) {
+                            console.error("AdSense init error:", e);
+                        }
+                    });
                 }, 100);
 
             } else {
