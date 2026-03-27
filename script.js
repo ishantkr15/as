@@ -67,13 +67,13 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             grid.appendChild(card);
 
-            // Insert Ad after every 3 apps (Better CPC and User Experience)
-            if ((index + 1) % 3 === 0) {
+            // Insert Ad after every 4 apps (Better viewability & UX balance)
+            if ((index + 1) % 4 === 0) {
                 const adContainer = document.createElement('div');
                 adContainer.className = 'ad-container';
 
-                // Alternate between three ad slots based on ad count
-                const adIndex = (index + 1) / 3;
+                // Alternate between three ad slots
+                const adIndex = (index + 1) / 4;
                 const remainder = Math.floor(adIndex) % 3;
                 let adSlot;
 
@@ -82,17 +82,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else if (remainder === 2) {
                     adSlot = "5157427363";
                 } else {
-                    adSlot = "3461202314"; // 3rd Ad Unit
+                    adSlot = "3461202314";
                 }
 
                 adContainer.innerHTML = `
                 <div class="ad-label">Sponsored</div>
                 <ins class="adsbygoogle"
                      style="display:block"
-                     data-ad-format="fluid"
-                     data-ad-layout-key="-6t+ed+2i-1n-4w"
+                     data-ad-format="auto"
                      data-ad-client="ca-pub-6608561504651468"
-                     data-ad-slot="${adSlot}"></ins>
+                     data-ad-slot="${adSlot}"
+                     data-full-width-responsive="true"></ins>
             `;
                 grid.appendChild(adContainer);
             }
