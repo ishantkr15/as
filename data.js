@@ -38,6 +38,40 @@ window.appsData = [
     "seoDesc": ""
   },
   {
+    "id": "Mission JEET",
+    "name": "Mission JEET",
+    "developer": "Mission JEET",
+    "version": "v1.02.7",
+    "size": "22 MB",
+    "downloads": "10000",
+    "tags": [
+      "Popular"
+    ],
+    "iconUrl": "https://i.postimg.cc/26F5zTH7/4661462-1-Mission-JEET-Logo.png",
+    "downloadUrl": "https://vplink.in/infinity",
+    "description": "",
+    "seoTitle": "",
+    "seoKeywords": "",
+    "seoDesc": ""
+  },
+  {
+    "id": "asmutliverseinfinity",
+    "name": "AS MULTIVERSE [ Infinity ]",
+    "developer": "AS MULTIVERSE ",
+    "version": "1.02.7",
+    "size": "20 MB",
+    "downloads": "4,00,000+",
+    "tags": [
+      "New"
+    ],
+    "iconUrl": "https://i.ibb.co/v6q9k0jP/x.jpg",
+    "downloadUrl": "https://vplink.in/infinity",
+    "description": "",
+    "seoTitle": "",
+    "seoKeywords": "",
+    "seoDesc": ""
+  },
+  {
     "id": "Alarmy",
     "name": "Alarmy - Alarm Clock Mod Version",
     "developer": "Unknown",
