@@ -20,6 +20,23 @@ window.appsData = [
     "seoDesc": "Download AS Multiverse v5.02.7 — access 12+ free educational apps for JEE, NEET, SSC & competitive exams. Video lectures, notes & test series. Trusted by 100K+ students at asmultiverse.in."
   },
   {
+    "id": "pw4free",
+    "name": "PW4FREE for JEE & NEET",
+    "developer": "Ishant",
+    "version": "NA",
+    "size": "6.5 MB",
+    "downloads": "NA",
+    "tags": [
+      "New"
+    ],
+    "iconUrl": "https://i.ibb.co/cX6nq0Hp/Chat-GPT-Image-May-12-2026-06-02-23-PM.png",
+    "downloadUrl": "https://vplink.in/PW4FREE",
+    "description": "This app if only for JEE and NEET students ",
+    "seoTitle": "PW MOD apk ",
+    "seoKeywords": "PW mod apk , pw , Arjuna , ",
+    "seoDesc": ""
+  },
+  {
     "id": "next-toppers",
     "name": "Next Toppers",
     "developer": "NT MOD APK v14.21.6",
