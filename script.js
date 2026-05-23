@@ -67,13 +67,13 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             grid.appendChild(card);
 
-            // Insert In-Feed Ad after every 3 apps (higher RPM with native feel)
-            if ((index + 1) % 3 === 0 && index < apps.length - 1) {
+            // Insert In-Feed Ad after every 4 apps (balanced UX & revenue)
+            if ((index + 1) % 4 === 0 && index < apps.length - 1) {
                 const adContainer = document.createElement('div');
-                adContainer.className = 'ad-container ad-infeed';
+                adContainer.className = 'ad-container';
 
-                // Rotate through ad slots for variety
-                const adIndex = Math.floor((index + 1) / 3);
+                // Rotate through ad slots
+                const adIndex = Math.floor((index + 1) / 4);
                 const remainder = adIndex % 3;
                 let adSlot;
 
@@ -89,10 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="ad-label">Sponsored</div>
                 <ins class="adsbygoogle"
                      style="display:block"
-                     data-ad-format="fluid"
-                     data-ad-layout-key="-6t+ed+2i-1n-4w"
+                     data-ad-format="auto"
                      data-ad-client="ca-pub-6608561504651468"
-                     data-ad-slot="${adSlot}"></ins>
+                     data-ad-slot="${adSlot}"
+                     data-full-width-responsive="true"></ins>
             `;
                 grid.appendChild(adContainer);
             }
