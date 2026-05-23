@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Lazy Load Ads with higher preload margin for better viewability
+        // Lazy Load only the dynamically injected in-feed ads
         const adObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -111,11 +111,22 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             });
-        }, { rootMargin: "300px 0px" }); // Preload 300px before view for higher viewability
+        }, { rootMargin: "300px 0px" });
 
-        document.querySelectorAll('.adsbygoogle').forEach(ad => {
+        // Only observe ads inside the app grid (dynamically created ones)
+        grid.querySelectorAll('.ad-container .adsbygoogle').forEach(ad => {
             adObserver.observe(ad);
         });
+
+        // Auto-hide empty ad blocks after 3s so they don't clutter the page
+        setTimeout(() => {
+            document.querySelectorAll('.ad-block, .ad-container').forEach(block => {
+                const ins = block.querySelector('.adsbygoogle');
+                if (ins && ins.offsetHeight < 10) {
+                    block.style.display = 'none';
+                }
+            });
+        }, 3000);
     }
 
     // Filter Functionality
