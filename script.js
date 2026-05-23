@@ -67,14 +67,14 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             grid.appendChild(card);
 
-            // Insert Ad after every 4 apps (Better viewability & UX balance)
-            if ((index + 1) % 4 === 0) {
+            // Insert In-Feed Ad after every 3 apps (higher RPM with native feel)
+            if ((index + 1) % 3 === 0 && index < apps.length - 1) {
                 const adContainer = document.createElement('div');
-                adContainer.className = 'ad-container';
+                adContainer.className = 'ad-container ad-infeed';
 
-                // Alternate between three ad slots
-                const adIndex = (index + 1) / 4;
-                const remainder = Math.floor(adIndex) % 3;
+                // Rotate through ad slots for variety
+                const adIndex = Math.floor((index + 1) / 3);
+                const remainder = adIndex % 3;
                 let adSlot;
 
                 if (remainder === 1) {
@@ -89,16 +89,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="ad-label">Sponsored</div>
                 <ins class="adsbygoogle"
                      style="display:block"
-                     data-ad-format="auto"
+                     data-ad-format="fluid"
+                     data-ad-layout-key="-6t+ed+2i-1n-4w"
                      data-ad-client="ca-pub-6608561504651468"
-                     data-ad-slot="${adSlot}"
-                     data-full-width-responsive="true"></ins>
+                     data-ad-slot="${adSlot}"></ins>
             `;
                 grid.appendChild(adContainer);
             }
         });
 
-        // Lazy Load Ads
+        // Lazy Load Ads with higher preload margin for better viewability
         const adObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             });
-        }, { rootMargin: "200px" }); // Preload 200px before view
+        }, { rootMargin: "300px 0px" }); // Preload 300px before view for higher viewability
 
         document.querySelectorAll('.adsbygoogle').forEach(ad => {
             adObserver.observe(ad);
