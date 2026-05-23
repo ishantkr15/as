@@ -864,37 +864,34 @@ footer {
 
 /* AdSense In-Feed Styles */
 .ad-container {
-    display: block;
-    margin: 1.5rem 0;
-    background: rgba(18, 18, 45, 0.5);
-    padding: 1rem;
-    border-radius: 12px;
-    position: relative;
-    text-align: center;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-    min-height: 100px;
-    border: 1px solid rgba(123, 77, 255, 0.08);
-    transition: opacity 0.3s ease;
-    grid-column: 1 / -1;
+    display: none;
+    /* Hidden by default on desktop — sidebar ads handle desktop */
 }
 
-/* In-feed native ad styling */
-.ad-infeed {
-    background: rgba(22, 18, 51, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 1.2rem;
+/* Mobile Ad Styles — in-feed ads only show on mobile */
+@media (max-width: 768px) {
+    .ad-container {
+        display: block;
+        margin: 1.5rem 0;
+        background: rgba(18, 18, 45, 0.4);
+        padding: 1rem;
+        border-radius: 12px;
+        position: relative;
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: 1px solid rgba(123, 77, 255, 0.08);
+    }
 }
 
-.ad-container .ad-label,
-.ad-block .ad-label {
+.ad-container .ad-label {
     font-size: 0.65rem;
-    color: rgba(160, 160, 176, 0.6);
+    color: rgba(160, 160, 176, 0.5);
     text-transform: uppercase;
-    margin-bottom: 8px;
-    text-align: center;
+    margin-bottom: 6px;
+    text-align: left;
     letter-spacing: 1px;
 }
 
@@ -914,20 +911,6 @@ footer {
 .ad-close-btn:hover {
     opacity: 1;
     color: #ff5252;
-}
-
-/* Mobile ad optimizations */
-@media (max-width: 768px) {
-    .ad-container {
-        margin: 1rem 0;
-        padding: 0.8rem;
-        border-radius: 10px;
-        min-height: 250px;
-    }
-
-    .ad-infeed {
-        min-height: 280px;
-    }
 }
 
 .btn-download-main:hover {
