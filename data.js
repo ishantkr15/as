@@ -1,6 +1,22 @@
-window.lastUpdated = "3/17/2026, 12:42:30 AM";
+window.lastUpdated = "6/1/2026, 7:48:46 PM";
 window.appsData = [
-
+  {
+    "id": "NextTopper Mod APK",
+    "name": "NextTopper Mod APK",
+    "developer": "Ishant",
+    "version": "1",
+    "size": "8 MB",
+    "downloads": "10k+",
+    "tags": [
+      "New"
+    ],
+    "iconUrl": "https://i.ibb.co/7d3ByN3b/Chat-GPT-Image-Jun-1-2026-05-57-16-PM.png",
+    "downloadUrl": "https://vplink.in/nexttoppers",
+    "description": "Download NextTopper Mod APK with Premium Unlocked & No Ads. Access all study material, live classes, and mock tests for free. Install the latest version now.",
+    "seoTitle": "NextTopper Mod APK v24.12.2 (Premium Unlocked) Download 2026",
+    "seoKeywords": "Download NextTopper Mod APK with Premium Unlocked & No Ads. Access all study material, live classes, and mock tests for free. Install the latest version now.",
+    "seoDesc": "NextTopper mod apk, NextTopper premium unlocked, download NextTopper mod, NextTopper latest version, NextTopper no ads, NextTopper free study app, NextTopper hack apk, educational mod apk, NextTopper 2026 mod.\n\n"
+  },
   {
     "id": "as-multiverse",
     "name": "AS MULTIVERSE",
@@ -297,5 +313,4 @@ window.appsData = [
     "seoKeywords": "",
     "seoDesc": ""
   }
-  
 ];
