@@ -1,6 +1,24 @@
 window.lastUpdated = "6/2/2026, 10:51:06 PM";
 window.appsData = [
   {
+    "id": "as-multiverse",
+    "name": "AS MULTIVERSE",
+    "developer": "As Multiverse",
+    "version": "v5.02.7",
+    "size": "24 MB",
+    "downloads": "100K +",
+    "tags": [
+      "Educational",
+      "Popular"
+    ],
+    "iconUrl": "https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e00a5c58-461c-4c43-a911-d606e00ad53b.png",
+    "downloadUrl": "https://vplink.in/pwmodnew",
+    "description": "AS Multiverse is your one-stop educational app store. Download free educational apps for JEE, NEET, SSC, Banking, Railway and competitive exam preparation. Access video lectures, notes, test series and study materials from India's top educators — all in one place. Trusted by 100K+ students across India.",
+    "seoTitle": "AS Multiverse v5.02.7 — Free Educational Apps for JEE, NEET & Competitive Exams",
+    "seoKeywords": "as multiverse, asmultiverse, as multiverse app, as multiverse store, asmultiverse.com, as multiverse website, as multiverse download, educational apps free, jee neet preparation app, competitive exam app, as multiverse 2026",
+    "seoDesc": "Download AS Multiverse v5.02.7 — access 12+ free educational apps for JEE, NEET, SSC & competitive exams. Video lectures, notes & test series. Trusted by 100K+ students at asmultiverse.in."
+  },
+  {
     "id": "Science_and_fun",
     "name": "Science and Fun",
     "developer": "Ishant kumar",
@@ -33,24 +51,6 @@ window.appsData = [
     "seoTitle": "NextTopper Mod APK v24.12.2 (Premium Unlocked) Download 2026",
     "seoKeywords": "Download NextTopper Mod APK with Premium Unlocked & No Ads. Access all study material, live classes, and mock tests for free. Install the latest version now.",
     "seoDesc": "NextTopper mod apk, NextTopper premium unlocked, download NextTopper mod, NextTopper latest version, NextTopper no ads, NextTopper free study app, NextTopper hack apk, educational mod apk, NextTopper 2026 mod.\n\n"
-  },
-  {
-    "id": "as-multiverse",
-    "name": "AS MULTIVERSE",
-    "developer": "As Multiverse",
-    "version": "v5.02.7",
-    "size": "24 MB",
-    "downloads": "100K +",
-    "tags": [
-      "Educational",
-      "Popular"
-    ],
-    "iconUrl": "https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e00a5c58-461c-4c43-a911-d606e00ad53b.png",
-    "downloadUrl": "https://vplink.in/pwmodnew",
-    "description": "AS Multiverse is your one-stop educational app store. Download free educational apps for JEE, NEET, SSC, Banking, Railway and competitive exam preparation. Access video lectures, notes, test series and study materials from India's top educators — all in one place. Trusted by 100K+ students across India.",
-    "seoTitle": "AS Multiverse v5.02.7 — Free Educational Apps for JEE, NEET & Competitive Exams",
-    "seoKeywords": "as multiverse, asmultiverse, as multiverse app, as multiverse store, asmultiverse.com, as multiverse website, as multiverse download, educational apps free, jee neet preparation app, competitive exam app, as multiverse 2026",
-    "seoDesc": "Download AS Multiverse v5.02.7 — access 12+ free educational apps for JEE, NEET, SSC & competitive exams. Video lectures, notes & test series. Trusted by 100K+ students at asmultiverse.in."
   },
   {
     "id": "pw4free",
