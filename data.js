@@ -1,5 +1,22 @@
-window.lastUpdated = "6/1/2026, 7:48:46 PM";
+window.lastUpdated = "6/2/2026, 10:49:36 PM";
 window.appsData = [
+  {
+    "id": "S&C",
+    "name": "Science and Fun",
+    "developer": "Ishant kumar",
+    "version": "1",
+    "size": "18 MB",
+    "downloads": "10k+",
+    "tags": [
+      "New"
+    ],
+    "iconUrl": "https://i.ibb.co/j9x0227R/Chat-GPT-Image-Jun-2-2026-10-00-52-PM.png",
+    "downloadUrl": "https://vplink.in/Sanc",
+    "description": "Download Science and Fun by Ashu Sir Mod APK v6.4.2 (Premium Unlocked). Get free access to live classes, offline videos, NCERT solutions, and more for classes 9-12, CUET & NDA. The 'Learn Practically' app now fully unlocked. Install now",
+    "seoTitle": "Science and Fun by Ashu Sir Mod APK 6.4.2 (Premium Unlocked) Latest 2026",
+    "seoKeywords": "Science and Fun by Ashu Sir mod apk, Science and Fun mod apk, Science and Fun premium unlocked, Science and Fun apk mod, Science and Fun hack apk, Science and Fun Ashu Sir mod, download Science and Fun mod apk, Science and Fun mod apk latest version, Science and Fun app mod, Science and Fun no ads, Science and Fun free app",
+    "seoDesc": "Download Science and Fun by Ashu Sir Mod APK v6.4.2 (Premium Unlocked). Get free access to live classes, offline videos, NCERT solutions, and more for classes 9-12, CUET & NDA. The 'Learn Practically' app now fully unlocked. Install now!"
+  },
   {
     "id": "NextTopper Mod APK",
     "name": "NextTopper Mod APK",
