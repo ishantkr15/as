@@ -1,7 +1,7 @@
-window.lastUpdated = "6/2/2026, 10:49:36 PM";
+window.lastUpdated = "6/2/2026, 10:51:06 PM";
 window.appsData = [
   {
-    "id": "S&C",
+    "id": "Science_and_fun",
     "name": "Science and Fun",
     "developer": "Ishant kumar",
     "version": "1",
