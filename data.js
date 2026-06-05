@@ -70,29 +70,6 @@ window.appsData = [
     "seoDesc": "Download NextTopper Mod APK v24.12.2 with Premium Unlocked & No Ads. Access live classes, mock tests & full study material for JEE & NEET — 100% free on As Multiverse. No subscription required."
   },
   {
-    "id": "pw4free",
-    "name": "PW4FREE for JEE & NEET",
-    "developer": "As Multiverse",
-    "version": "1.0",
-    "size": "6.5 MB",
-    "downloads": "5K+",
-    "tags": ["New", "Educational"],
-    "iconUrl": "https://i.ibb.co/cX6nq0Hp/Chat-GPT-Image-May-12-2026-06-02-23-PM.png",
-    "downloadUrl": "https://vplink.in/PW4FREE",
-    "description": "PW4FREE gives JEE and NEET students access to Physics Wallah content — including Arjuna batches, video lectures, DPPs and test series — completely free. No subscription, no login. Made exclusively for serious JEE & NEET aspirants.",
-    "features": [
-      "Physics Wallah content for free",
-      "Arjuna JEE & NEET batch access",
-      "Video lectures & DPPs",
-      "Test series included",
-      "No subscription or login",
-      "Lightweight — only 6.5 MB"
-    ],
-    "seoTitle": "PW4FREE — Physics Wallah Free App for JEE & NEET Students 2026",
-    "seoKeywords": "PW mod apk, PW4FREE apk, physics wallah free app, physics wallah mod apk, Arjuna batch free, PW JEE NEET free, physics wallah premium free, pw4free download, pw app free 2026, jee neet free study app",
-    "seoDesc": "Download PW4FREE — get Physics Wallah's Arjuna batch, video lectures, DPPs & test series completely free. Made for JEE & NEET students. No subscription needed. Download now from As Multiverse."
-  },
-  {
     "id": "next-toppers",
     "name": "Next Toppers",
     "developer": "Next Toppers",
