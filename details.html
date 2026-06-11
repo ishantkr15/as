@@ -349,85 +349,71 @@
 
                 // Render app details
                 container.innerHTML = `
-                    <div class="detail-card">
-                        <div class="detail-header">
-                            <div class="app-icon-container">
-                                <img src="${app.iconUrl}" alt="${app.name} Icon" class="detail-icon" 
-                                     onerror="this.src='https://via.placeholder.com/120/7b4dff/ffffff?text=${encodeURIComponent(app.name.substring(0, 1))}'">
-                                <div class="app-badge">FREE</div>
-                            </div>
-                            <div class="app-title-section">
-                                <h1 class="detail-title">${app.name}</h1>
-                                <p class="app-developer">${app.developer}</p>
-                                <div class="app-rating">
-                                    ${Array.from({ length: 5 }, (_, i) =>
-                    `<i class="fas fa-star${i < 4 ? '' : '-half-alt'}"></i>`
-                ).join('')}
+                    <!-- PREMIUM APP HERO -->
+                    <div class="premium-detail-hero">
+                        <div class="hero-backdrop" style="background-image: url('${app.iconUrl}')"></div>
+                        <div class="hero-overlay"></div>
+                        <div class="hero-content">
+                            <img src="${app.iconUrl}" alt="${app.name} Icon" class="hero-icon" onerror="this.src='https://via.placeholder.com/120/7b4dff/ffffff?text=${encodeURIComponent(app.name.substring(0, 1))}'">
+                            <div class="hero-info">
+                                <h1 class="hero-title">${app.name}</h1>
+                                <p class="hero-developer">${app.developer}</p>
+                                <div class="hero-rating">
+                                    ${Array.from({ length: 5 }, (_, i) => `<i class="fas fa-star${i < 4 ? '' : '-half-alt'}"></i>`).join('')}
                                     <span class="rating-text">4.8 (1.2k)</span>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="app-meta-grid">
+                    </div>
+
+                    <div class="detail-card premium-detail-card">
+                        <div class="premium-meta-grid">
                             <div class="meta-item">
-                                <i class="fas fa-code-branch"></i>
+                                <i class="fas fa-code-branch meta-icon"></i>
                                 <span class="meta-label">Version</span>
                                 <span class="meta-value">${app.version}</span>
                             </div>
                             <div class="meta-item">
-                                <i class="fas fa-download"></i>
+                                <i class="fas fa-download meta-icon"></i>
                                 <span class="meta-label">Downloads</span>
                                 <span class="meta-value">${app.downloads}</span>
                             </div>
                             <div class="meta-item">
-                                <i class="fas fa-hdd"></i>
+                                <i class="fas fa-hdd meta-icon"></i>
                                 <span class="meta-label">Size</span>
                                 <span class="meta-value">${app.size}</span>
                             </div>
                             <div class="meta-item">
-                                <i class="fas fa-calendar-alt"></i>
+                                <i class="fas fa-calendar-alt meta-icon"></i>
                                 <span class="meta-label">Updated</span>
                                 <span class="meta-value">${app.lastUpdated || 'Recently'}</span>
                             </div>
                         </div>
 
-                        <div class="download-section">
-                            <a href="${app.downloadUrl}" class="btn btn-download-main" 
-                               aria-label="Download ${app.name}">
-                                <i class="fas fa-cloud-download-alt"></i> 
-                                <span>Download Now</span>
-                                <small>${app.size} • Full Access</small>
+                        <div class="premium-action-bar">
+                            ${app.showStudyNow === true ? `
+                            <a href="${app.studyNowUrl}" class="btn btn-premium-study" target="_blank">
+                                <i class="fas fa-book-reader"></i> STUDY NOW
+                            </a>` : ''}
+                            
+                            ${app.showDownload !== false ? `
+                            <a href="${app.downloadUrl}" class="btn btn-premium-download">
+                                <i class="fas fa-cloud-download-alt"></i> DOWNLOAD NOW
                             </a>
-                            <div class="download-info">
-                                <p><i class="fas fa-check-circle"></i> Safe & Verified</p>
-                                <p><i class="fas fa-bolt"></i> No Ads</p>
-                                <p><i class="fas fa-lock-open"></i> Premium Features</p>
-                            </div>
-                            <button class="btn-how-to-download" onclick="openVideoModal()">
-                                <i class="fas fa-play-circle"></i> How to Download
-                            </button>
+                            <button class="btn-how-to-download-small" onclick="openVideoModal()">
+                                <i class="fas fa-play-circle"></i> How to Install
+                            </button>` : ''}
                         </div>
 
-                        <!-- Ad Unit 1: After Download Section -->
-                        <div class="ad-block">
-                            <div class="ad-label">Sponsored</div>
-                            <ins class="adsbygoogle"
-                                 style="display:block"
-                                 data-ad-client="ca-pub-6608561504651468"
-                                 data-ad-slot="7626019470"
-                                 data-ad-format="auto"
-                                 data-full-width-responsive="true"></ins>
-                        </div>
-
-                        <div class="detail-section">
+                        <div class="premium-detail-content">
                             <h3><i class="fas fa-info-circle"></i> About this App</h3>
                             <div class="description-content">${app.description}</div>
                             
                             ${app.features ? `
-                            <div class="features-section">
-                                <h4><i class="fas fa-star"></i> Key Features</h4>
-                                <ul class="features-list">
-                                    ${app.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                            <div class="premium-features-section">
+                                <h3><i class="fas fa-star"></i> Key Features</h3>
+                                <ul class="premium-features-list">
+                                    ${app.features.map(feature => `<li><i class="fas fa-check-circle"></i> ${feature}</li>`).join('')}
                                 </ul>
                             </div>` : ''}
                         </div>
@@ -435,17 +421,6 @@
                         <div class="app-tags">
                             ${app.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
                         </div>
-                    </div>
-
-                    <!-- Ad Unit 2: Before Related Apps -->
-                    <div class="ad-block">
-                        <div class="ad-label">Sponsored</div>
-                        <ins class="adsbygoogle"
-                             style="display:block"
-                             data-ad-client="ca-pub-6608561504651468"
-                             data-ad-slot="5157427363"
-                             data-ad-format="auto"
-                             data-full-width-responsive="true"></ins>
                     </div>
                     
                     ${apps.filter(a => a.id !== app.id).length > 0 ? `
@@ -455,16 +430,6 @@
                             <!-- Related apps will be populated here -->
                         </div>
                     </div>
-                    
-                    <!-- Ad Unit 3: After Related Apps -->
-                    <div class="ad-block">
-                        <div class="ad-label">Sponsored</div>
-                        <ins class="adsbygoogle"
-                             style="display:block"
-                             data-ad-client="ca-pub-6608561504651468"
-                             data-ad-slot="3461202314"
-                             data-ad-format="auto"
-                             data-full-width-responsive="true"></ins>
                     </div>` : ''}
                 `;
 

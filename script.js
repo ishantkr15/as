@@ -46,87 +46,27 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (app.tags.includes('Popular')) {
                 badge = '<span class="tag-badge popular">POPULAR</span>';
             }
-
             card.innerHTML = `
-                ${badge}
-                <div class="app-header">
-                    <img src="${app.iconUrl}" alt="${app.name}" class="app-icon" onerror="this.src='https://via.placeholder.com/60'">
-                    <div class="app-info">
-                        <h3>${app.name}</h3>
-                        <p>${app.developer}</p>
+                <a href="details.html?id=${app.id}" style="text-decoration: none; display: block; color: inherit;">
+                    <div class="app-banner-container">
+                        <img src="${app.iconUrl}" alt="${app.name}" class="app-banner" onerror="this.src='https://via.placeholder.com/300x180/1a1a2e/ffffff?text=${encodeURIComponent(app.name)}'">
+                        ${badge}
                     </div>
-                </div>
-                <div class="app-meta">
-                    <span class="meta-item"><i class="fas fa-code-branch"></i> ${app.version}</span>
-                    <span class="meta-item"><i class="fas fa-download"></i> ${app.downloads}</span>
-                    <span class="meta-item"><i class="fas fa-hdd"></i> ${app.size}</span>
-                </div>
-                <div class="action-buttons">
-                    <a href="details.html?id=${app.id}" class="btn btn-download"><i class="fas fa-download"></i> Download</a>
+                    <div class="app-content-container" style="padding-bottom: 0.5rem;">
+                        <h3 class="app-title-centered">${app.name}</h3>
+                        <p class="app-subtitle-centered">${app.developer}</p>
+                    </div>
+                </a>
+                <div class="app-content-container" style="padding-top: 0; flex: 1; justify-content: flex-end;">
+                    <div class="action-buttons-row">
+                        ${app.showStudyNow === true ? `<a href="${app.studyNowUrl}" class="btn btn-explore" target="_blank"><i class="fas fa-book-reader"></i> STUDY NOW</a>` : ''}
+                        ${app.showDownload !== false ? `<a href="${app.downloadUrl}" class="btn btn-enroll" target="_blank"><i class="fas fa-cloud-download-alt"></i> DOWNLOAD</a>` : ''}
+                    </div>
                 </div>
             `;
             grid.appendChild(card);
 
-            // Insert In-Feed Ad after every 4 apps (balanced UX & revenue)
-            if ((index + 1) % 4 === 0 && index < apps.length - 1) {
-                const adContainer = document.createElement('div');
-                adContainer.className = 'ad-container';
-
-                // Rotate through ad slots
-                const adIndex = Math.floor((index + 1) / 4);
-                const remainder = adIndex % 3;
-                let adSlot;
-
-                if (remainder === 1) {
-                    adSlot = "7626019470";
-                } else if (remainder === 2) {
-                    adSlot = "5157427363";
-                } else {
-                    adSlot = "3461202314";
-                }
-
-                adContainer.innerHTML = `
-                <div class="ad-label">Sponsored</div>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="auto"
-                     data-ad-client="ca-pub-6608561504651468"
-                     data-ad-slot="${adSlot}"
-                     data-full-width-responsive="true"></ins>
-            `;
-                grid.appendChild(adContainer);
-            }
         });
-
-        // Lazy Load only the dynamically injected in-feed ads
-        const adObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const ad = entry.target;
-                    try {
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                        observer.unobserve(ad);
-                    } catch (e) {
-                        console.error("AdSense error:", e);
-                    }
-                }
-            });
-        }, { rootMargin: "300px 0px" });
-
-        // Only observe ads inside the app grid (dynamically created ones)
-        grid.querySelectorAll('.ad-container .adsbygoogle').forEach(ad => {
-            adObserver.observe(ad);
-        });
-
-        // Auto-hide empty ad blocks after 3s so they don't clutter the page
-        setTimeout(() => {
-            document.querySelectorAll('.ad-block, .ad-container').forEach(block => {
-                const ins = block.querySelector('.adsbygoogle');
-                if (ins && ins.offsetHeight < 10) {
-                    block.style.display = 'none';
-                }
-            });
-        }, 3000);
     }
 
     // Filter Functionality

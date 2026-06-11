@@ -600,6 +600,26 @@
                             <label>Description</label>
                             <textarea id="appDesc" rows="4"></textarea>
                         </div>
+                        
+                        <!-- Feature Toggles Section -->
+                        <div class="form-group full-width"
+                            style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 1rem; padding-top: 1rem;">
+                            <h4 style="margin-bottom: 1rem; color: var(--primary-color);">Features Control</h4>
+                        </div>
+                        <div class="grid-form" style="grid-column: span 2; display: flex; gap: 2rem; align-items: center; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 10px; border: 1px solid var(--glass-border);">
+                            <div class="form-group" style="display: flex; align-items: center; gap: 10px; margin-bottom: 0;">
+                                <input type="checkbox" id="showDownload" checked style="width: 20px; height: 20px; margin: 0; cursor: pointer;">
+                                <label for="showDownload" style="margin: 0; cursor: pointer; color: white;">Show Download Button</label>
+                            </div>
+                            <div class="form-group" style="display: flex; align-items: center; gap: 10px; margin-bottom: 0;">
+                                <input type="checkbox" id="showStudyNow" style="width: 20px; height: 20px; margin: 0; cursor: pointer;">
+                                <label for="showStudyNow" style="margin: 0; cursor: pointer; color: white;">Show Study Now Button</label>
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Study Now URL</label>
+                            <input type="text" id="studyNowUrl" placeholder="https://example.com/course">
+                        </div>
 
                         <!-- SEO Section -->
                         <div class="form-group full-width"
@@ -830,6 +850,11 @@
             document.getElementById('appLink').value = app.downloadUrl;
             document.getElementById('appDesc').value = app.description || '';
 
+            // Features Populate
+            document.getElementById('showDownload').checked = app.showDownload !== false; // Default true
+            document.getElementById('showStudyNow').checked = app.showStudyNow === true; // Default false
+            document.getElementById('studyNowUrl').value = app.studyNowUrl || '';
+
             // SEO Populate
             document.getElementById('seoTitle').value = app.seoTitle || '';
             document.getElementById('seoKeywords').value = app.seoKeywords || '';
@@ -870,6 +895,9 @@
                 iconUrl: document.getElementById('appIcon').value,
                 downloadUrl: document.getElementById('appLink').value,
                 description: document.getElementById('appDesc').value,
+                showDownload: document.getElementById('showDownload').checked,
+                showStudyNow: document.getElementById('showStudyNow').checked,
+                studyNowUrl: document.getElementById('studyNowUrl').value,
                 // SEO Data
                 seoTitle: document.getElementById('seoTitle').value,
                 seoKeywords: document.getElementById('seoKeywords').value,
