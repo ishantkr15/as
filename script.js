@@ -66,7 +66,34 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             grid.appendChild(card);
 
+            // Inject Native Ad Card every 6 apps
+            if ((index + 1) % 6 === 0 && index !== apps.length - 1) {
+                const adCard = document.createElement('div');
+                adCard.className = 'ad-card';
+                adCard.style.animationDelay = `${(index + 1) * 0.1}s`;
+                adCard.innerHTML = `
+                    <span class="premium-ad-label">Sponsored</span>
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-format="fluid"
+                         data-ad-layout-key="-fb+5w+4e-db+86"
+                         data-ad-client="ca-pub-6608561504651468"
+                         data-ad-slot="5157427363"></ins>
+                `;
+                grid.appendChild(adCard);
+            }
         });
+
+        // Initialize AdSense for the newly injected native ads
+        setTimeout(() => {
+            document.querySelectorAll('.ad-card .adsbygoogle').forEach(ad => {
+                if (ad.innerHTML === '') {
+                    try {
+                        (window.adsbygoogle = window.adsbygoogle || []).push({});
+                    } catch (e) {}
+                }
+            });
+        }, 100);
     }
 
     // Filter Functionality

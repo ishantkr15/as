@@ -407,7 +407,18 @@
 
                         <div class="premium-detail-content">
                             <h3><i class="fas fa-info-circle"></i> About this App</h3>
-                            <div class="description-content">${app.description}</div>
+                            <div class="description-content">
+                                <div class="in-article-ad premium-ad-container" style="padding: 0; border-radius: 12px; margin-top: 0; min-height: 250px;">
+                                    <span class="premium-ad-label" style="top: 0.2rem; right: 0.5rem;">Sponsored</span>
+                                    <ins class="adsbygoogle"
+                                         style="display:block; text-align:center;"
+                                         data-ad-layout="in-article"
+                                         data-ad-format="fluid"
+                                         data-ad-client="ca-pub-6608561504651468"
+                                         data-ad-slot="7626019470"></ins>
+                                </div>
+                                ${app.description}
+                            </div>
                             
                             ${app.features ? `
                             <div class="premium-features-section">
@@ -423,6 +434,25 @@
                         </div>
                     </div>
                     
+                    <!-- Premium Banner Ad -->
+                    <div class="premium-ad-container" style="margin-top: 2rem;">
+                        <span class="premium-ad-label">Sponsored</span>
+                        
+                        <div class="ad-desktop-only">
+                            <ins class="adsbygoogle"
+                                 style="display:inline-block; width:100%; height:90px"
+                                 data-ad-client="ca-pub-6608561504651468"
+                                 data-ad-slot="5157427363"></ins>
+                        </div>
+                        
+                        <div class="ad-mobile-only">
+                            <ins class="adsbygoogle"
+                                 style="display:inline-block; width:100%; height:250px"
+                                 data-ad-client="ca-pub-6608561504651468"
+                                 data-ad-slot="5157427363"></ins>
+                        </div>
+                    </div>
+
                     ${apps.filter(a => a.id !== app.id).length > 0 ? `
                     <div class="related-apps-section">
                         <h3><i class="fas fa-thumbs-up"></i> You Might Also Like</h3>
@@ -547,9 +577,11 @@
                     }
 
                     // Initialize all ad units on the page
-                    document.querySelectorAll('.ad-block .adsbygoogle').forEach(ad => {
+                    document.querySelectorAll('.adsbygoogle').forEach(ad => {
                         try {
-                            (adsbygoogle = window.adsbygoogle || []).push({});
+                            if (ad.innerHTML === '') {
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            }
                         } catch (e) {
                             console.error("AdSense init error:", e);
                         }

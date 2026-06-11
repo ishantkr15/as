@@ -2720,3 +2720,96 @@ body {
         padding: 1.5rem 1rem 1.5rem 2.5rem;
     }
 }
+
+/* Premium Ads Integration */
+.premium-ad-container {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.premium-ad-label {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 1px;
+    pointer-events: none;
+}
+
+/* In-Grid Ad Card */
+.ad-card {
+    background: linear-gradient(145deg, rgba(30, 32, 45, 0.8) 0%, rgba(17, 20, 29, 0.9) 100%);
+    border: 1px solid rgba(123, 77, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    min-height: 250px;
+}
+
+.ad-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(123, 77, 255, 0.5), transparent);
+}
+
+.ad-card .adsbygoogle {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Float ad inside details article */
+.in-article-ad {
+    float: right;
+    margin: 0 0 1.5rem 2rem;
+    width: 300px;
+    min-height: 250px;
+    border-radius: 16px;
+}
+
+@media (max-width: 768px) {
+    .in-article-ad {
+        float: none;
+        margin: 2rem auto;
+        width: 100%;
+    }
+}
+
+/* Responsive Ad Controls */
+.ad-desktop-only {
+    display: block;
+    width: 100%;
+}
+.ad-mobile-only {
+    display: none;
+    width: 100%;
+}
+@media (max-width: 768px) {
+    .ad-desktop-only {
+        display: none !important;
+    }
+    .ad-mobile-only {
+        display: block !important;
+    }
+}
